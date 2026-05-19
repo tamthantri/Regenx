@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Sinh Thái Phục Hồi Chuyên Sâu & Trị Liệu Hiện Đại kết hợp Đông Y</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ==========================================================================
+           HỆ THỐNG MÀU SẮC & PHONG CÁCH BRANDING (TỐI GIẢN - HIỆN ĐẠI)
+           ========================================================================== */
+        :root {
+            --navy-dark: #0A192F;    /* Xanh Navy đậm: Nền tảng chuyên sâu, tin cậy */
+            --navy-light: #172A45;   /* Xanh Navy sáng: Tạo chiều sâu cho các block */
+            --teal: #00B4D8;         /* Xanh Ngọc: Đại diện cho công nghệ từ trường siêu dẫn */
+            --gold: #F4D03F;         /* Ánh Vàng nhẹ: Điểm nhấn Đông Y phục hồi cao cấp */
+            --white: #FFFFFF;
+            --light-gray: #F8F9FA;
+            --text-main: #333333;
+            --text-muted: #A0AEC0;
+        }
+
+        /* Thiết lập cơ bản */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 88%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* KHU VỰC TIÊU ĐỀ SECTION */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            color: var(--navy-dark);
+            position: relative;
+            padding-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--teal);
+        }
+
+        .section-header p {
+            margin-top: 15px;
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-teal {
+            background-color: var(--teal);
+            color: var(--white);
+        }
+
+        .btn-teal:hover {
+            background-color: #0096B4;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--navy-dark);
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================================================
+           1. THANH ĐIỀU HƯỚNG (HEADER & NAVIGATION)
+           ========================================================================== */
+        header {
+            background-color: var(--navy-dark);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .brand-logo {
+            color: var(--white);
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .brand-logo span {
+            color: var(--teal);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--teal);
+        }
+
+        .nav-cta {
+            background-color: var(--teal);
+            color: var(--white) !important;
+            padding: 8px 18px;
+            border-radius: 4px;
+        }
+
+        .nav-cta:hover {
+            background-color: #0096B4;
+        }
+
+        /* ==========================================================================
+           2. KHU VỰC HERO BANNER (THÔNG ĐIỆP TRUYỀN THÔNG)
+           ========================================================================== */
+        .hero-section {
+            background: linear-gradient(135deg, var(--navy-dark) 50%, var(--navy-light) 100%);
+            color: var(--white);
+            padding: 180px 0 120px 0;
+        }
+
+        .hero-wrapper {
+            max-width: 800px;
+        }
+
+        .hero-wrapper h1 {
+            font-size: 40px;
+            line-height: 1.4;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .hero-wrapper h1 span {
+            color: var(--teal);
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .hero-wrapper p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 650px;
+        }
+
+        .hero-action-btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* ==========================================================================
+           3. NHÓM CÔNG NGHỆ CHỦ LỰC (SHOCKWAVE, TECAR, SCM...)
+           ========================================================================== */
+        .tech-section {
+            padding: 90px 0;
+            background-color: var(--white);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .tech-card {
+            background: var(--white);
+            border: 1px solid #E2E8F0;
+            padding: 35px 30px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(10, 25, 47, 0.08);
+            border-color: var(--teal);
+        }
+
+        .tech-card-icon {
+            font-size: 40px;
+            color: var(--teal);
+            margin-bottom: 20px;
+        }
+
+        .tech-card h3 {
+            font-size: 20px;
+            color: var(--navy-dark);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .tech-card p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        /* ==========================================================================
+           4. NHÓM BỆNH LÝ TRỌNG TÂM (CỘT SỐNG & KHỚP)
+           ========================================================================== */
+        .pathology-section {
+            padding: 90px 0;
+            background-color: var(--light-gray);
+        }
+
+        .pathology-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .pathology-category {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .pathology-category h3 {
+            font-size: 22px;
+            color: var(--navy-dark);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 10px;
+        }
+
+        .pathology-category h3 i {
+            color: var(--teal);
+        }
+
+        .pathology-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .pathology-list li {
+            font-size: 15px;
+            font-weight: 500;
+            color: #444;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pathology-list li i {
+            color: #2ECC71;
+            font-size: 14px;
+        }
+
+        /* ==========================================================================
+           5. ĐỊNH HƯỚNG CHUYÊN BIỆT: RECOVERY CHO RUNNER
+           ========================================================================== */
+        .runner-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(10, 25, 47, 0.92), rgba(10, 25, 47, 0.92)), 
+                        url('https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+        }
+
+        .runner-section .section-header h2 {
+            color: var(--white);
+        }
+
+        .runner-section .section-header p {
+            color: var(--text-muted);
+        }
+
+        .runner-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .runner-text h3 {
+            font-size: 24px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .runner-text p {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        .runner-benefits {
+            list-style: none;
+        }
+
+        .runner-benefits li {
+            margin-bottom: 15px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .runner-benefits li i {
+            color: var(--teal);
+            font-size: 18px;
+        }
+
+        .runner-visual {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px dashed rgba(255,255,255,0.2);
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* ==========================================================================
+           6. HỆ THỐNG CHUYỂN ĐỔI CAO CẤP (FORM CHẨN ĐOÁN MIỄN PHÍ)
+           ========================================================================== */
+        .conversion-section {
+            padding: 90px 0;
+            background-color: var(--light-gray);
+        }
+
+        .conversion-wrapper {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+        }
+
+        .conversion-info h3 {
+            font-size: 28px;
+            color: var(--navy-dark);
+            margin-bottom: 20px;
+        }
+
+        .conversion-info p {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .features-check {
+            list-style: none;
+        }
+
+        .features-check li {
+            margin-bottom: 15px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #444;
+        }
+
+        .features-check li i {
+            color: var(--teal);
+        }
+
+        /* Giao diện form dữ liệu */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--navy-dark);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #CBD5E0;
+            border-radius: 4px;
+            outline: none;
+            font-size: 15px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--teal);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--navy-dark);
+            color: var(--white);
+            border: none;
+            padding: 14px;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--teal);
+        }
+
+        #form-status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            display: none;
+            text-align: center;
+        }
+        .status-success {
+            background-color: #D4EDDA;
+            color: #155724;
+        }
+        .status-error {
+            background-color: #F8D7DA;
+            color: #721C24;
+        }
+
+        /* ==========================================================================
+           7. CÁC TIỆN ÍCH LIÊN HỆ (ZALO OA FLOATING BUTTON)
+           ========================================================================== */
+        .zalo-sticky {
+            position: fixed;
+            bottom: 35px;
+            right: 35px;
+            background-color: #0068FF;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 26px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .zalo-sticky:hover {
+            transform: scale(1.1);
+        }
+
+        /* ==========================================================================
+           8. CHÂN TRANG (FOOTER)
+           ========================================================================== */
+        footer {
+            background-color: var(--navy-dark);
+            color: var(--white);
+            padding: 50px 0;
+            font-size: 14px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-info p {
+            margin-bottom: 5px;
+            color: var(--text-muted);
+        }
+
+        .footer-brand {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .footer-brand span {
+            color: var(--teal);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="#" class="brand-logo">REGEN<span>X</span></a>
+            <ul class="nav-links">
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#tech">Công nghệ</a></li>
+                <li><a href="#pathology">Bệnh lý điều trị</a></li>
+                <li><a href="#runner">Runner Recovery</a></li>
+                <li><a href="#tu-van" class="nav-cta">Đặt lịch hẹn</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-wrapper">
+                <h1>“Không chỉ giảm đau bề mặt – mục tiêu là <span>phục hồi sâu</span> từ bên trong mô tổn thương.”</h1>
+                <p>Hệ sinh thái phục hồi chuyên sâu kết hợp Đông y cổ truyền và công nghệ trị liệu hiện đại, mang lại giá trị sức khỏe bền vững cho cộng đồng.</p>
+                <div class="hero-action-btns">
+                    <a href="#tu-van" class="btn btn-teal">Đánh giá tình trạng miễn phí</a>
+                    <a href="#tech" class="btn btn-outline">Tìm hiểu công nghệ SCM</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech" class="tech-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Công Nghệ Trị Liệu Chủ Lực</h2>
+                <p>Ứng dụng giải pháp tân tiến đẩy nhanh tốc độ tái tạo tế bào cơ xương khớp</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-card-icon"><i class="fa-solid fa-wave-square"></i></div>
+                    <h3>Từ Trường Siêu Dẫn (SCM)</h3>
+                    <p>Xuyên sâu qua các lớp cơ, kích thích trực tiếp cấp độ tế bào, tăng tốc độ phục hồi mô tổn thương sâu cực kỳ hiệu quả.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                    <h3>Shockwave & TECAR Therapy</h3>
+                    <p>Giải tỏa nhanh chóng các điểm xoắn cơ mãn tính, tăng tưới máu cục bộ và tái cấu trúc vùng xơ hóa dai dẳng.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon"><i class="fa-solid fa-seedling"></i></div>
+                    <h3>Đông Y Phục Hồi Chuyên Sâu</h3>
+                    <p>Tích hợp y học cổ truyền giúp cân bằng chính khí, bồi bổ can thận, nuôi dưỡng gân cốt từ căn nguyên sâu bên trong.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pathology" class="pathology-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nhóm Bệnh Lý Điều Trị Trọng Tâm</h2>
+                <p>Phác đồ chuyên sâu riêng biệt cho từng thể trạng bệnh lý</p>
+            </div>
+            <div class="pathology-box">
+                <div class="pathology-category">
+                    <h3><i class="fa-solid fa-bone"></i> Trị Liệu Cột Sống</h3>
+                    <ul class="pathology-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Thoát vị đĩa đệm</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Thoái hóa cột sống</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Đau thần kinh tọa</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Hội chứng cổ vai gáy</li>
+                    </ul>
+                </div>
+                <div class="pathology-category">
+                    <h3><i class="fa-solid fa-accessibility"></i> Trị Liệu Các Khớp</h3>
+                    <ul class="pathology-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Thoái hóa khớp gối</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Viêm quanh khớp vai</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Tennis Elbow</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Viêm cân gan chân</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="runner" class="runner-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recovery Cho Runner</h2>
+                <p>Đồng hành cùng cộng đồng Marathon & Ultra Trail nâng tầm phong độ</p>
+            </div>
+            <div class="runner-container">
+                <div class="runner-text">
+                    <h3>Tối Ưu Hóa Phục Hồi Sau Race</h3>
+                    <p>Giải pháp trị liệu chuyên biệt hỗ trợ các vận động viên giải tỏa áp lực cơ học dồn nén, xử lý triệt để các hội chứng quá tải vận động thường gặp:</p>
+                    <ul class="runner-benefits">
+                        <li><i class="fa-solid fa-person-running"></i> Hội chứng dải chậu chậu hông (IT Band)</li>
+                        <li><i class="fa-solid fa-person-running"></i> Viêm gân gót chân (Achilles)</li>
+                        <li><i class="fa-solid fa-person-running"></i> Hội chứng đau cẳng chân (Shin Splint)</li>
+                        <li><i class="fa-solid fa-person-running"></i> Phục hồi nhanh, phòng ngừa chấn thương tái phát</li>
+                    </ul>
+                </div>
+                <div class="runner-visual">
+                    <p><i class="fa-solid fa-images" style="font-size: 40px; color: var(--text-muted); margin-bottom: 15px; display:block;"></i>[Vùng hiển thị Video/Hình ảnh thực tế trị liệu phục hồi thể thao cho Runner]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tu-van" class="conversion-section">
+        <div class="container">
+            <div class="conversion-wrapper">
+                <div class="conversion-info">
+                    <h3>Đăng Ký Đánh Giá Tình Trạng Miễn Phí</h3>
+                    <p>Hồ sơ bệnh lý và hình ảnh MRI/X-Ray của bạn sẽ được bảo mật tuyệt đối và gửi thẳng tới Thầy để đánh giá giải pháp phục hồi tối ưu.</p>
+                    <ul class="features-check">
+                        <li><i class="fa-solid fa-circle-nodes"></i> Tư vấn đúng căn nguyên tổn thương.</li>
+                        <li><i class="fa-solid fa-circle-nodes"></i> Không lạm dụng thuốc giảm đau bề mặt.</li>
+                        <li><i class="fa-solid fa-circle-nodes"></i> Tích hợp gửi đính kèm kết quả MRI/X-Ray nhanh chóng.</li>
+                    </ul>
+                </div>
+                
+                <form id="treatment-form" enctype="multipart/form-data">
+                    <input type="hidden" name="access_key" value="ĐIỀN_MÃ_KEY_CỦA_THẦY_VÀO_ĐÂY">
+                    <input type="hidden" name="subject" value="Yêu Cầu Tư Vấn Điều Trị Mới Từ Website REGENX">
+                    <input type="hidden" name="from_name" value="Hệ Thống REGENX">
+
+                    <div class="form-group">
+                        <label for="name">Họ và tên của bạn</label>
+                        <input type="text" name="Họ tên KH" id="name" placeholder="Ví dụ: Nguyễn Văn A" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại (Có Zalo)</label>
+                        <input type="tel" name="Số Zalo" id="phone" placeholder="Ví dụ: 0912345678" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Vấn đề cần phục hồi trọng tâm</label>
+                        <select name="Nhóm bệnh lý" id="type">
+                            <option value="Cột sống / Đau đĩa đệm">Cột sống / Đau đĩa đệm / Thần kinh tọa</option>
+                            <option value="Chấn thương thể thao / Runner">Phục hồi chấn thương thể thao / Runner</option>
+                            <option value="Viêm khớp / Thoái hóa">Viêm khớp / Thoái hóa các khớp cơ học</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="file">Gửi kèm hình ảnh/phim chụp MRI hoặc X-Ray (Nếu có)</label>
+                        <input type="file" name="File đính kèm (MRI/XRay)" id="file" accept="image/*,application/pdf">
+                    </div>
+                    <button type="submit" class="btn-submit" id="submit-text">Gửi thông tin đánh giá chuyên môn</button>
+                    
+                    <div id="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://zalo.me/YOUR_ZALO_ID_HERE" class="zalo-sticky" target="_blank" title="Trò chuyện qua Zalo">
+        <i class="fa-solid fa-comment-dots"></i>
+    </a>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <div class="footer-brand">REGEN<span>X</span></div>
+                <p>Tầm nhìn: Xây dựng hệ sinh thái phục hồi chuyên sâu bền vững cho cộng đồng.</p>
+                <p>© 2026 REGENX Center. Thiết kế tối giản tối ưu trải nghiệm người dùng.</p>
+            </div>
+            <div class="footer-contact" style="text-align: right;">
+                <p><strong>Địa chỉ:</strong> Khu vực Đồng Nai / Chứa Chan Mountain</p>
+                <p><strong>Hotline:</strong> Kết nối trực tiếp qua Zalo OA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Hiệu ứng cuộn mượt (Smooth Scroll) khi nhấn menu điều hướng
+        document.querySelectorAll('nav a, .hero-action-btns a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Tính toán khoảng cách trừ đi thanh menu cố định phía trên
+                        const headerOffset = 80; 
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // 2. Kịch bản xử lý dữ liệu Form tự động (Không reload trang, báo trạng thái trực quan)
+        const form = document.getElementById('treatment-form');
+        const statusBox = document.getElementById('form-status');
+        const submitBtn = document.getElementById('submit-text');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Trạng thái đang xử lý
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Chờ giây lát... Hệ thống đang truyền dữ liệu";
+            statusBox.style.display = "none";
+
+            const formData = new FormData(form);
+
+            // Gửi dữ liệu bất đồng bộ qua API Web3Forms (Hỗ trợ đẩy dữ liệu + file về Email/Telegram)
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    statusBox.className = "status-success";
+                    statusBox.innerHTML = "<i class='fa-solid fa-circle-check'></i> Đã gửi thành công! Thông tin của bạn đã được chuyển tới Thầy.";
+                    statusBox.style.display = "block";
+                    form.reset(); // Xóa sạch dữ liệu form sau khi gửi thành công
+                } else {
+                    console.log(response);
+                    statusBox.className = "status-error";
+                    statusBox.innerHTML = json.message || "Đã xảy ra lỗi hệ thống. Vui lòng thử lại.";
+                    statusBox.style.display = "block";
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                statusBox.className = "status-error";
+                statusBox.innerHTML = "Không thể kết nối máy chủ! Hãy kiểm tra lại mạng Internet.";
+                statusBox.style.display = "block";
+            })
+            .then(() => {
+                // Khôi phục nút bấm sau khi hoàn tất
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Gửi thông tin đánh giá chuyên môn";
+            });
+        });
+    </script>
+</body>
+</html>
