@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hệ Sinh Thái Phục Hồi Chuyên Sâu & Trị Liệu Hiện Đại kết hợp Đông Y</title>
-    <!-- Nhúng bộ Icon chất lượng cao -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -619,7 +618,6 @@
 </head>
 <body>
 
-    <!-- 1. THANH ĐIỀU HƯỚNG -->
     <header>
         <div class="container navbar">
             <a href="#" class="brand-logo">REGEN<span>X</span></a>
@@ -633,7 +631,6 @@
         </div>
     </header>
 
-    <!-- 2. HERO BANNER -->
     <section class="hero-section">
         <div class="container">
             <div class="hero-wrapper">
@@ -647,7 +644,6 @@
         </div>
     </section>
 
-    <!-- 3. NHÓM CÔNG NGHỆ CHỦ LỰC -->
     <section id="tech" class="tech-section">
         <div class="container">
             <div class="section-header">
@@ -674,7 +670,6 @@
         </div>
     </section>
 
-    <!-- 4. NHÓM BỆNH LÝ TRỌNG TÂM -->
     <section id="pathology" class="pathology-section">
         <div class="container">
             <div class="section-header">
@@ -682,17 +677,15 @@
                 <p>Phác đồ chuyên sâu riêng biệt cho từng thể trạng bệnh lý</p>
             </div>
             <div class="pathology-box">
-                <!-- Nhóm Cột Sống -->
                 <div class="pathology-category">
                     <h3><i class="fa-solid fa-bone"></i> Trị Liệu Cột Sống</h3>
                     <ul class="pathology-list">
-                        <li><i class="fa-solid fa-circle-check"></i> thoát vị đĩa đệm</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Thoát vị đĩa đệm</li>
                         <li><i class="fa-solid fa-circle-check"></i> Thoái hóa cột sống</li>
                         <li><i class="fa-solid fa-circle-check"></i> Đau thần kinh tọa</li>
                         <li><i class="fa-solid fa-circle-check"></i> Hội chứng cổ vai gáy</li>
                     </ul>
                 </div>
-                <!-- Nhóm Khớp -->
                 <div class="pathology-category">
                     <h3><i class="fa-solid fa-accessibility"></i> Trị Liệu Các Khớp</h3>
                     <ul class="pathology-list">
@@ -706,7 +699,6 @@
         </div>
     </section>
 
-    <!-- 5. RECOVERY CHO RUNNER -->
     <section id="runner" class="runner-section">
         <div class="container">
             <div class="section-header">
@@ -718,7 +710,7 @@
                     <h3>Tối Ưu Hóa Phục Hồi Sau Race</h3>
                     <p>Giải pháp trị liệu chuyên biệt hỗ trợ các vận động viên giải tỏa áp lực cơ học dồn nén, xử lý triệt để các hội chứng quá tải vận động thường gặp:</p>
                     <ul class="runner-benefits">
-                        <li><i class="fa-solid fa-person-running"></i> Hội chứng dải chậu chậu hông (IT Band)</li>
+                        <li><i class="fa-solid fa-person-running"></i> Hội chứng dải chậu hông (IT Band)</li>
                         <li><i class="fa-solid fa-person-running"></i> Viêm gân gót chân (Achilles)</li>
                         <li><i class="fa-solid fa-person-running"></i> Hội chứng đau cẳng chân (Shin Splint)</li>
                         <li><i class="fa-solid fa-person-running"></i> Phục hồi nhanh, phòng ngừa chấn thương</li>
@@ -731,7 +723,6 @@
         </div>
     </section>
 
-    <!-- 6. HỆ THỐNG CHUYỂN ĐỔI CHẨN ĐOÁN -->
     <section id="tu-van" class="conversion-section">
         <div class="container">
             <div class="conversion-wrapper">
@@ -744,40 +735,38 @@
                         <li><i class="fa-solid fa-circle-nodes"></i> Đính kèm kết quả MRI/X-Ray tiện lợi.</li>
                     </ul>
                 </div>
-                <!-- Form gửi thông tin -->
-                <form class="conversion-form">
+                
+                <form class="conversion-form" action="https://formspree.io/f/xnjrwrrl" method="POST">
                     <div class="form-group">
                         <label for="name">Họ và tên của bạn</label>
-                        <input type="text" id="name" placeholder="Ví dụ: Nguyễn Văn A" required>
+                        <input type="text" id="name" name="Họ và Tên" placeholder="Ví dụ: Nguyễn Văn A" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Số điện thoại (Có Zalo)</label>
-                        <input type="tel" id="phone" placeholder="Ví dụ: 0912345678" required>
+                        <input type="tel" id="phone" name="Số điện thoại" placeholder="Ví dụ: 0912345678" required>
                     </div>
                     <div class="form-group">
                         <label for="type">Vấn đề cần phục hồi trọng tâm</label>
-                        <select id="type">
-                            <option value="spine">Cột sống / Đau đĩa đệm / Thần kinh tọa</option>
-                            <option value="runner">Phục hồi chấn thương thể thao / Runner</option>
-                            <option value="joints">Viêm khớp / Thoái hóa các khớp cơ học</option>
+                        <select id="type" name="Vấn đề trọng tâm">
+                            <option value="Cột sống / Đau đĩa đệm / Thần kinh tọa">Cột sống / Đau đĩa đệm / Thần kinh tọa</option>
+                            <option value="Phục hồi chấn thương thể thao / Runner">Phục hồi chấn thương thể thao / Runner</option>
+                            <option value="Viêm khớp / Thoái hóa các khớp cơ học">Viêm khớp / Thoái hóa các khớp cơ học</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="file">Gửi kèm phim chụp MRI hoặc X-Ray (Nếu có)</label>
-                        <input type="file" id="file" accept="image/*,application/pdf">
+                        <label for="file">Gửi kèm đường link phim chụp MRI / X-Ray hoặc Ghi chú tình trạng</label>
+                        <input type="text" id="file" name="Link phim chụp hoặc Ghi chú" placeholder="Dán link ảnh phim chụp hoặc gõ ghi chú triệu chứng tại đây">
                     </div>
-                    <button type="submit" class="btn-submit">Gửi thông tin đánh giá chuyên môn</button>
+                    <button type="submit" class="btn-submit">Gửi thông tin đăng ký tư vấn</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- 7. NÚT CHAT ZALO OA FLOATING -->
     <a href="https://zalo.me/YOUR_ZALO_ID_HERE" class="zalo-sticky" target="_blank" title="Trò chuyện qua Zalo">
         <i class="fa-solid fa-comment-dots"></i>
     </a>
 
-    <!-- 8. CHÂN TRANG FOOTER -->
     <footer>
         <div class="container footer-content">
             <div class="footer-info">
