@@ -325,7 +325,130 @@
         }
 
         /* ==========================================================================
-           5. ĐỊNH HƯỚNG CHUYÊN BIỆT: RECOVERY CHO RUN RUNNER
+           4.5. KHU VỰC BẢNG GIÁ TRỊ LIỆU TINH TẾ & HIỆN ĐẠI
+           ========================================================================== */
+        .pricing-section {
+            padding: 70px 0;
+            background-color: var(--white);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 40px 30px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(10, 25, 47, 0.06);
+            border-color: var(--teal);
+        }
+
+        /* Điểm nhấn cho gói Runner làm thương hiệu */
+        .pricing-card.featured {
+            border: 2px solid var(--navy-dark);
+            background-gradient: linear-gradient(135deg, var(--white) 60%, #F0F8FF) 100%;
+        }
+
+        .pricing-card.featured::before {
+            content: 'KHUYÊN DÙNG CHO VĐV';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--navy-dark);
+            color: var(--white);
+            padding: 4px 14px;
+            font-size: 11px;
+            font-weight: 700;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-card h3 {
+            font-size: 20px;
+            color: var(--navy-dark);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .pricing-price {
+            font-size: 26px;
+            color: var(--teal);
+            font-weight: 700;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #E2E8F0;
+            padding-bottom: 15px;
+        }
+
+        .pricing-price span {
+            font-size: 14px;
+            color: #777;
+            font-weight: 400;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .pricing-features li {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .pricing-features li i {
+            color: var(--teal);
+            margin-top: 3px;
+            font-size: 13px;
+        }
+
+        .pricing-btn {
+            width: 100%;
+            background-color: var(--light-gray);
+            color: var(--navy-dark);
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover .pricing-btn {
+            background-color: var(--teal);
+            color: var(--white);
+        }
+
+        .pricing-card.featured .pricing-btn {
+            background-color: var(--navy-dark);
+            color: var(--white);
+        }
+
+        .pricing-card.featured:hover .pricing-btn {
+            background-color: var(--teal);
+        }
+
+        /* ==========================================================================
+           5. ĐỊNH HƯỚNG CHUYÊN BIỆT: RECOVERY CHO RUNNER
            ========================================================================== */
         .runner-section {
             padding: 80px 0;
@@ -578,7 +701,7 @@
             .section-header h2 {
                 font-size: 22px;
             }
-            .pathology-box {
+            .pathology-box, .pricing-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
@@ -630,6 +753,7 @@
                 <li><a href="#">Trang chủ</a></li>
                 <li><a href="#tech">Công nghệ</a></li>
                 <li><a href="#pathology">Bệnh lý</a></li>
+                <li><a href="#pricing">Bảng giá</a></li>
                 <li><a href="#runner">Runner</a></li>
                 <li><a href="#tu-van" class="nav-cta">Đặt lịch hẹn</a></li>
             </ul>
@@ -705,6 +829,53 @@
                         </ul>
                     </div>
                     <img src="https://i.postimg.cc/g2WSWqY1/Lat-so-mi.jpg" alt="Trị liệu phục hồi các khớp cơ học" class="pathology-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Bảng Giá Dịch Vụ Trị Liệu & Phục Hồi</h2>
+                <p>Chi phí minh bạch - Giải pháp chuyên sâu kết hợp công nghệ cao và y học cổ truyền</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Trị Liệu Cột Sống</h3>
+                    <div class="pricing-price">350.000đ <span>/ buổi</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Khám, đánh giá phim chụp MRI/X-Ray chuyên sâu</li>
+                        <li><i class="fa-solid fa-check"></i> Trị liệu Từ Trường Siêu Dẫn (SCM) giảm áp đĩa đệm</li>
+                        <li><i class="fa-solid fa-check"></i> Tích hợp TECAR giải tỏa co thắt cơ sâu vùng vai gáy/lưng</li>
+                        <li><i class="fa-solid fa-check"></i> Đông y phục hồi chính khí, nuôi dưỡng cột sống</li>
+                    </ul>
+                    <a href="#tu-van" class="pricing-btn">Đặt lịch trị liệu</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3>Runner Recovery Pro</h3>
+                    <div class="pricing-price">450.000đ <span>/ buổi</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-star" style="color: var(--gold);"></i> Khám tầm soát chấn thương thể thao chuyên sâu</li>
+                        <li><i class="fa-solid fa-check"></i> Xử lý điểm xoắn cơ, viêm gân cơ học bằng Shockwave</li>
+                        <li><i class="fa-solid fa-check"></i> Trị liệu SCM cấp tốc phục hồi Achilles, IT Band, Shin Splint</li>
+                        <li><i class="fa-solid fa-check"></i> Kỹ thuật giải áp mô mềm cơ học sau race Marathon/Ultra Trail</li>
+                    </ul>
+                    <a href="#tu-van" class="pricing-btn">Đăng ký phục hồi</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Trị Liệu Các Khớp</h3>
+                    <div class="pricing-price">300.000đ <span>/ buổi</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Kiểm tra biên độ vận động khớp (Gối, vai, cổ tay)</li>
+                        <li><i class="fa-solid fa-check"></i> Ứng dụng Từ trường siêu dẫn kích thích tái tạo sụn khớp</li>
+                        <li><i class="fa-solid fa-check"></i> Siêu âm trị liệu / Laser công suất cao giảm viêm cục bộ</li>
+                        <li><i class="fa-solid fa-check"></i> Đông y chuyên sâu nuôi gân, nhu nhuận ổ khớp</li>
+                    </ul>
+                    <a href="#tu-van" class="pricing-btn">Đặt lịch trị liệu</a>
                 </div>
             </div>
         </div>
