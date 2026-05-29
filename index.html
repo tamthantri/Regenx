@@ -474,7 +474,7 @@
         }
 
         /* ==========================================================================
-           7. CÁC TIỆN ÍCH LIÊN HỆ (ZALO OA FLOATING BUTTON)
+           7. CÁC TIỆN ÍCH LIÊN HỆ (NÚT CHAT ZALO KẾT NỐI HOTLINE MỚI)
            ========================================================================== */
         .zalo-sticky {
             position: fixed;
@@ -492,6 +492,11 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.25);
             z-index: 999;
             text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .zalo-sticky:hover {
+            transform: scale(1.1);
         }
 
         /* ==========================================================================
@@ -532,7 +537,6 @@
            MÃ ĐIỀU CHỈNH RIÊNG CHO GIAO DIỆN DI ĐỘNG (RESPONSIVE MEDIA QUERIES)
            ========================================================================== */
         @media (max-width: 768px) {
-            /* 1. Tối ưu Header & Thu nhỏ Menu trên điện thoại */
             .navbar {
                 flex-direction: column;
                 gap: 10px;
@@ -555,8 +559,6 @@
             .nav-cta {
                 padding: 5px 10px !important;
             }
-
-            /* 2. Thu nhỏ khu vực Banner chính */
             .hero-section {
                 padding: 160px 0 50px 0;
                 text-align: center;
@@ -571,28 +573,22 @@
                 justify-content: center;
             }
             .btn {
-                width: 100%; /* Cho nút bấm full chiều ngang trên màn hình dọc */
+                width: 100%;
             }
-
-            /* 3. Đưa tiêu đề các khu vực về cỡ chữ vừa mắt trên mobile */
             .section-header h2 {
                 font-size: 22px;
             }
-
-            /* 4. Chuyển đổi các khối bệnh lý thành 1 cột */
             .pathology-box {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
             .pathology-list {
-                grid-template-columns: 1fr; /* Danh sách bệnh lý xếp dọc */
+                grid-template-columns: 1fr;
             }
             .pathology-img {
                 height: 160px;
                 margin-top: 10px;
             }
-
-            /* 5. Tối ưu khu vực Runner */
             .runner-container {
                 grid-template-columns: 1fr;
                 gap: 30px;
@@ -604,8 +600,6 @@
                 justify-content: flex-start;
                 text-align: left;
             }
-
-            /* 6. Co giãn lại Form Đăng Ký để không bị méo */
             .conversion-wrapper {
                 grid-template-columns: 1fr;
                 padding: 25px 20px;
@@ -616,8 +610,6 @@
             .features-check li {
                 text-align: left;
             }
-
-            /* 7. Chân trang */
             .footer-content {
                 flex-direction: column;
                 text-align: center;
@@ -795,7 +787,7 @@
         </div>
     </section>
 
-    <a href="https://zalo.me/YOUR_ZALO_ID_HERE" class="zalo-sticky" target="_blank" title="Trò chuyện qua Zalo">
+    <a href="https://zalo.me/0937010012" class="zalo-sticky" target="_blank" title="Trò chuyện qua Zalo: 0937.010.012">
         <i class="fa-solid fa-comment-dots"></i>
     </a>
 
@@ -807,8 +799,8 @@
                 <p>© 2026 REGENX Center.</p>
             </div>
             <div class="footer-contact" style="text-align: right;">
-                <p><strong>Địa chỉ:</strong> Đồng Nai / Chứa Chan Mountain</p>
-                <p><strong>Hotline:</strong> Kết nối qua Zalo OA</p>
+                <p><strong>Địa chỉ:</strong> 248 quốc lộ 51 khu phố 2, Long Hưng, Thành Phố Biên Hòa, Đồng Nai</p>
+                <p><strong>Hotline / Zalo:</strong> 0937 010 012</p>
             </div>
         </div>
     </footer>
