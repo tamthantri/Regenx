@@ -208,7 +208,7 @@
         }
 
         /* ==========================================================================
-           3. NHÓM CÔNG NGHỆ CHỦ LỰC (SHOCKWAVE, TECAR, SCM...)
+           3. NHOM CONG NGHE CHU LUC (SHOCKWAVE, TECAR, SCM...)
            ========================================================================== */
         .tech-section {
             padding: 70px 0;
@@ -255,7 +255,7 @@
         }
 
         /* ==========================================================================
-           4. NHÓM BỆNH LÝ TRỌNG TÂM (CỘT SỐNG & KHỚP)
+           4. NHOM BENH LY TRONG TAM (COT SONG & KHOP)
            ========================================================================== */
         .pathology-section {
             padding: 70px 0;
@@ -325,7 +325,7 @@
         }
 
         /* ==========================================================================
-           4.5. KHU VỰC BẢNG GIÁ TRỊ LIỆU TINH TẾ & HIỆN ĐẠI
+           4.5. KHU VUC BANG GIA TRI LIEU TINH TE & HIEN DAI
            ========================================================================== */
         .pricing-section {
             padding: 70px 0;
@@ -356,14 +356,13 @@
             border-color: var(--teal);
         }
 
-        /* Điểm nhấn cho gói Runner làm thương hiệu */
         .pricing-card.featured {
             border: 2px solid var(--navy-dark);
             background: linear-gradient(135deg, var(--white) 60%, #F0F8FF);
         }
 
         .pricing-card.featured::before {
-            content: 'KHUYÊN DÙNG CHO VĐV';
+            content: 'KHUYEN DUNG CHO VDV';
             position: absolute;
             top: -12px;
             left: 50%;
@@ -448,7 +447,7 @@
         }
 
         /* ==========================================================================
-           4.8. KHU VỰC TẠP CHÍ - GÓC KIẾN THỨC Y KHOA CHUYÊN SÂU
+           4.8. KHU VUC TAP CHI - GOC KIEN THUC Y KHOA CHUYEN SAU
            ========================================================================== */
         .blog-section {
             padding: 70px 0;
@@ -458,8 +457,8 @@
 
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 20px;
             margin-top: 20px;
         }
 
@@ -482,57 +481,56 @@
 
         .blog-card-img {
             width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: cover;
         }
 
         .blog-card-content {
-            padding: 25px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
         .blog-card-tag {
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 700;
             color: var(--teal);
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .blog-card h3 {
-            font-size: 18px;
+            font-size: 16px;
             color: var(--navy-dark);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-weight: 600;
             line-height: 1.4;
         }
 
         .blog-card p {
             color: #666;
-            font-size: 13.5px;
+            font-size: 13px;
             line-height: 1.5;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .blog-card-link {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             color: var(--navy-dark);
             margin-top: auto;
             display: flex;
             align-items: center;
             gap: 5px;
-            transition: color 0.3s;
         }
 
         .blog-card:hover .blog-card-link {
             color: var(--teal);
         }
 
-        /* HỆ THỐNG POPUP MODAL ĐỌC BÀI TẠI CHỖ */
+        /* HE THONG POPUP MODAL DOC BAI TAI CHO */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -588,7 +586,6 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            transition: background 0.3s;
             z-index: 10;
         }
 
@@ -653,11 +650,10 @@
             color: var(--text-muted);
             font-size: 14px;
             margin-bottom: 20px;
-            text-align: center;
         }
 
         /* ==========================================================================
-           5. ĐỊNH HƯỚNG CHUYÊN BIỆT: RECOVERY CHO RUNNER
+           5. DINH HUONG CHUYEN BIET: RECOVERY CHO RUNNER
            ========================================================================== */
         .runner-section {
             padding: 80px 0;
@@ -721,7 +717,7 @@
         }
 
         /* ==========================================================================
-           6. HỆ THỐNG CHUYỂN ĐỔI CAO CẤP (FORM CHẨN ĐOÁN MIỄN PHÍ)
+           6. HE THONG CHUYEN DOI CAO CAP (FORM CHAN DOAN MIEN PHI)
            ========================================================================== */
         .conversion-section {
             padding: 70px 0;
@@ -806,7 +802,7 @@
         }
 
         /* ==========================================================================
-           7. CÁC TIỆN ÍCH LIÊN HỆ (ZALO STICKY BUTTON)
+           7. CAC TIEN ICH LIEN HE (ZALO STICKY BUTTON)
            ========================================================================== */
         .zalo-sticky {
             position: fixed;
@@ -832,7 +828,7 @@
         }
 
         /* ==========================================================================
-           8. CHÂN TRANG (FOOTER)
+           8. CHAN TRANG (FOOTER)
            ========================================================================== */
         footer {
             background-color: var(--navy-dark);
@@ -864,101 +860,33 @@
             color: var(--teal);
         }
 
-
-        /* ==========================================================================
-           MÃ ĐIỀU CHỈNH RIÊNG CHO GIAO DIỆN DI ĐỘNG (RESPONSIVE MEDIA QUERIES)
-           ========================================================================== */
+        /* RESPONSIVE MEDIA QUERIES */
         @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 10px;
-                padding: 10px 0;
-            }
-            .nav-links {
-                width: 100%;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 8px;
-            }
-            .nav-links li {
-                margin-left: 0;
-                margin: 0 5px;
-            }
-            .nav-links a {
-                font-size: 12px;
-                padding: 4px 6px;
-            }
-            .nav-cta {
-                padding: 5px 10px !important;
-            }
-            .hero-section {
-                padding: 160px 0 50px 0;
-                text-align: center;
-            }
-            .hero-wrapper h1 {
-                font-size: 24px;
-            }
-            .hero-wrapper p {
-                font-size: 14px;
-            }
-            .hero-action-btns {
-                justify-content: center;
-            }
-            .btn {
-                width: 100%;
-            }
-            .section-header h2 {
-                font-size: 22px;
-            }
-            .pathology-box, .pricing-grid, .blog-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .pathology-list {
-                grid-template-columns: 1fr;
-            }
-            .pathology-img {
-                height: 160px;
-                margin-top: 10px;
-            }
-            .modal-body {
-                padding: 20px;
-            }
-            .modal-body h2 {
-                font-size: 18px;
-            }
-            .modal-header-img {
-                height: 180px;
-            }
-            .runner-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            .runner-text {
-                text-align: center;
-            }
-            .runner-benefits li {
-                justify-content: flex-start;
-                text-align: left;
-            }
-            .conversion-wrapper {
-                grid-template-columns: 1fr;
-                padding: 25px 20px;
-            }
-            .conversion-info {
-                text-align: center;
-            }
-            .features-check li {
-                text-align: left;
-            }
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-            .footer-contact {
-                text-align: center !important;
-            }
+            .navbar { flex-direction: column; gap: 10px; padding: 10px 0; }
+            .nav-links { width: 100%; justify-content: center; flex-wrap: wrap; gap: 8px; }
+            .nav-links li { margin-left: 0; margin: 0 5px; }
+            .nav-links a { font-size: 12px; padding: 4px 6px; }
+            .nav-cta { padding: 5px 10px !important; }
+            .hero-section { padding: 160px 0 50px 0; text-align: center; }
+            .hero-wrapper h1 { font-size: 24px; }
+            .hero-wrapper p { font-size: 14px; }
+            .hero-action-btns { justify-content: center; }
+            .btn { width: 100%; }
+            .section-header h2 { font-size: 22px; }
+            .pathology-box, .pricing-grid, .blog-grid { grid-template-columns: 1fr; gap: 20px; }
+            .pathology-list { grid-template-columns: 1fr; }
+            .pathology-img { height: 160px; margin-top: 10px; }
+            .modal-body { padding: 20px; }
+            .modal-body h2 { font-size: 18px; }
+            .modal-header-img { height: 180px; }
+            .runner-container { grid-template-columns: 1fr; gap: 30px; }
+            .runner-text { text-align: center; }
+            .runner-benefits li { justify-content: flex-start; text-align: left; }
+            .conversion-wrapper { grid-template-columns: 1fr; padding: 25px 20px; }
+            .conversion-info { text-align: center; }
+            .features-check li { text-align: left; }
+            .footer-content { flex-direction: column; text-align: center; gap: 20px; }
+            .footer-contact { text-align: center !important; }
         }
     </style>
 </head>
@@ -1059,7 +987,6 @@
                 <h2>Bảng Giá Dịch Vụ Trị Liệu & Phục Hồi</h2>
                 <p>Chi phí minh bạch - Giải pháp chuyên sâu kết hợp công nghệ cao và y học cổ truyền</p>
             </div>
-            
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3>Trị Liệu Cột Sống</h3>
@@ -1072,7 +999,6 @@
                     </ul>
                     <a href="#tu-van" class="pricing-btn">Đặt lịch trị liệu</a>
                 </div>
-
                 <div class="pricing-card featured">
                     <h3>Runner Recovery Pro</h3>
                     <div class="pricing-price">450.000đ <span>/ buổi</span></div>
@@ -1084,7 +1010,6 @@
                     </ul>
                     <a href="#tu-van" class="pricing-btn">Đăng ký phục hồi</a>
                 </div>
-
                 <div class="pricing-card">
                     <h3>Trị Liệu Các Khớp</h3>
                     <div class="pricing-price">300.000đ <span>/ buổi</span></div>
@@ -1106,35 +1031,41 @@
                 <h2>Góc Kiến Thức Y Khoa Chuyên Sâu</h2>
                 <p>Chia sẻ căn nguyên cơ học và phác đồ điều trị khoa học từ Thầy</p>
             </div>
-            
             <div class="blog-grid">
                 <div class="blog-card" onclick="openModal('modal-cvg')">
-                    <img src="https://i.postimg.cc/J0SNPmnM/Tri-lieu-vai-gay.jpg" alt="Trị liệu hội chứng cổ vai gáy" class="blog-card-img">
+                    <img src="https://i.postimg.cc/J0SNPmnM/Tri-lieu-vai-gay.jpg" alt="" class="blog-card-img">
                     <div class="blog-card-content">
-                        <span class="blog-card-tag">Bệnh lý văn phòng</span>
+                        <span class="blog-card-tag">Bệnh lý cột sống cổ</span>
                         <h3>Hội Chứng Cổ Vai Gáy: Căn Nguyên Xơ Hóa Cơ Học Và Giải Pháp Phục Hồi Tận Gốc</h3>
-                        <p>Tìm hiểu cơ chế hình thành các điểm xoắn cơ gây tê bì cánh tay và cách xử lý dứt điểm bằng bộ đôi TECAR & SCM.</p>
-                        <span class="blog-card-link">Đọc bài viết chuyên sâu <i class="fa-solid fa-arrow-right"></i></span>
+                        <p>Tìm hiểu cơ chế hình thành các điểm xoắn cơ gây tê bì cánh tay và cách xử lý dứt điểm bằng TECAR & SCM.</p>
+                        <span class="blog-card-link">Đọc bài viết <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </div>
-
-                <div class="blog-card" onclick="openModal('modal-runner')">
-                    <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=400&q=80" alt="Chấn thương thể thao runner" class="blog-card-img">
+                <div class="blog-card" onclick="openModal('modal-runner-art')">
+                    <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=400&q=80" alt="" class="blog-card-img">
                     <div class="blog-card-content">
                         <span class="blog-card-tag">Chấn thương thể thao</span>
-                        <h3>Tối Ưu Tốc Độ Phục Hồi Sau Race: Giải Pháp Xử Lý IT Band, Achilles Và Shin Splints</h3>
-                        <p>Phác đồ phục hồi cơ học, sửa chữa tổn thương vi thể mô gân cấp tốc giúp vận động viên nâng tầm phong độ.</p>
-                        <span class="blog-card-link">Đọc bài viết chuyên sâu <i class="fa-solid fa-arrow-right"></i></span>
+                        <h3>Tối Ưu Tốc Độ Phục Hồi Sau Race: Xử Lý IT Band, Achilles Và Shin Splints</h3>
+                        <p>Phác đồ sửa chữa tổn thương vi thể mô gân cấp tốc bằng công nghệ SCM giúp vận động viên nâng tầm phong độ.</p>
+                        <span class="blog-card-link">Đọc bài viết <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </div>
-
                 <div class="blog-card" onclick="openModal('modal-tvdd')">
-                    <img src="https://i.postimg.cc/8c7dRsTm/tri-lieu.jpg" alt="Phục hồi thoát vị đĩa đệm thắt lưng" class="blog-card-img">
+                    <img src="https://i.postimg.cc/8c7dRsTm/tri-lieu.jpg" alt="" class="blog-card-img">
                     <div class="blog-card-content">
-                        <span class="blog-card-tag">Cột sống chuyên sâu</span>
+                        <span class="blog-card-tag">Cột sống thắt lưng</span>
                         <h3>Thoát Vị Đĩa Đệm Thắt Lưng: Đừng Chỉ Giảm Đau Bề Mặt! Hãy Giải Áp Tận Gốc</h3>
-                        <p>Phân tích dưới góc nhìn cơ sinh học hiện đại kết hợp Can Thận hư tổn và phác đồ phục hồi đĩa đệm tự nhiên.</p>
-                        <span class="blog-card-link">Đọc bài viết chuyên sâu <i class="fa-solid fa-arrow-right"></i></span>
+                        <p>Phân tích dưới góc nhìn cơ sinh học hiện đại kết hợp Can Thận hư tổn và phục hồi bao xơ tự nhiên.</p>
+                        <span class="blog-card-link">Đọc bài viết <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div class="blog-card" onclick="openModal('modal-oct')">
+                    <img src="https://i.postimg.cc/BvGRLZms/ong-co-tay.jpg" alt="" class="blog-card-img">
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">Bệnh lý văn phòng</span>
+                        <h3>Hội Chứng Ống Cổ Tay: Biến Chứng Tê Bại Mất Cảm Giác Và Phác Đồ Phục Hồi Không Phẫu Thuật</h3>
+                        <p>Phân tích ca lâm sàng phục hồi thần tốc bàn tay mất cảm giác của bạn Lâm nhờ giải pháp TECAR & SCM.</p>
+                        <span class="blog-card-link">Đọc bài viết <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </div>
             </div>
@@ -1149,13 +1080,8 @@
                 <h2>Hội Chứng Cổ Vai Gáy: Căn Nguyên Xơ Hóa Cơ Học Và Phác Đồ Phục Hồi Tận Gốc Bằng Công Nghệ SCM & TECAR Tại Biên Hòa</h2>
                 <h3>1. Cơn ác mộng mang tên "Đau mỏi cổ vai gáy"</h3>
                 <p>Mỗi ngày, có hàng nghìn người thức dậy với chiếc cổ cứng đờ, bả vai đau nhức âm ỉ như có hàng tấn đá đè lên, kèm theo những cơn tê bì lan dọc xuống cánh tay...</p>
-                <h3>2. Phân tích khoa học</h3>
+                <h3>2. Phân tích khoa học dưới lăng kính "Thông bất thống"</h3>
                 <p>Dưới góc nhìn của giải phẫu học hiện đại, tình trạng đau mỏi vùng cổ dai dẳng xuất phát từ sự co thắt sợi cơ mãn tính tạo nên các điểm xoắn cơ (Trigger Points)...</p>
-                <blockquote>
-                    <p>"Thông bất thống, thống bất thông" — Khi kinh lạc, khí huyết lưu thông mượt mà thì không đau; khi xuất hiện bế tắc, cục bộ thì đau bùng phát.</p>
-                </blockquote>
-                <h3>3. Phác đồ tích hợp đột phá tại RegenX Biên Hòa</h3>
-                <p>Tại RegenX (248 Quốc lộ 51, Long Hưng, Biên Hòa), phác đồ phục hồi cổ vai gáy được thiết kế cá thể hóa, tích hợp sức mạnh của bộ đôi công nghệ tân tiến bậc nhất thế giới cùng tinh hoa y học cổ truyền.</p>
                 <div class="modal-cta-box">
                     <h4>Chủ động bảo vệ cột sống cổ trước khi quá muộn!</h4>
                     <p>Hãy dành lại sự nhẹ nhõm cho vùng cổ vai gáy của bạn ngay hôm nay cùng Thầy.</p>
@@ -1165,20 +1091,18 @@
         </div>
     </div>
 
-    <div id="modal-runner" class="modal-overlay">
+    <div id="modal-runner-art" class="modal-overlay">
         <div class="modal-box">
-            <div class="modal-close-btn" onclick="closeModal('modal-runner')"><i class="fa-solid fa-xmark"></i></div>
+            <div class="modal-close-btn" onclick="closeModal('modal-runner-art')"><i class="fa-solid fa-xmark"></i></div>
             <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=850&q=80" alt="" class="modal-header-img">
             <div class="modal-body">
                 <h2>Tối Ưu Tốc Độ Phục Hồi Sau Race: Giải Pháp Xử Lý Chấn Thương IT Band, Achilles Và Shin Splints Bằng Công Nghệ SCM</h2>
                 <h3>1. Nỗi đau phía sau vạch đích</h3>
-                <p>Hội chứng dải chậu hông (IT Band), viêm gân gót chân (Achilles), và hội chứng đau cẳng chân (Shin Splints) chính là "bộ ba sát thủ" bào mòn phong độ và dập tắt đam mê của biết bao runner...</p>
-                <h3>2. Phác đồ Recovery chuyên biệt tại RegenX</h3>
-                <p>Một phác đồ Recovery chuẩn cho runner không chỉ là massage thư giãn, mà là tái cấu trúc lại mô gân cơ bị tổn thương cơ học dựa trên nền tảng Từ trường siêu dẫn (SCM) và sóng xung kích.</p>
+                <p>Hội chứng dải chậu hông (IT Band), viêm gân gót chân (Achilles), và hội chứng đau cẳng chân (Shin Splints) chính là "bộ ba sát thủ" bào mộn phong độ của biết bao runner...</p>
                 <div class="modal-cta-box">
                     <h4>Đừng để chấn thương cướp đi PR tiếp theo của bạn!</h4>
                     <p>Hãy để Thầy đồng hành cùng đôi chân đam mê của bạn trên mọi cung đường.</p>
-                    <a href="#tu-van" onclick="closeModal('modal-runner')" class="btn btn-teal">Đăng ký phục hồi chuyên sâu cho Runner</a>
+                    <a href="#tu-van" onclick="closeModal('modal-runner-art')" class="btn btn-teal">Đăng ký phục hồi chuyên sâu cho Runner</a>
                 </div>
             </div>
         </div>
@@ -1190,14 +1114,36 @@
             <img src="https://i.postimg.cc/8c7dRsTm/tri-lieu.jpg" alt="" class="modal-header-img">
             <div class="modal-body">
                 <h2>Thoát Vị Đĩa Đệm Cột Sống Thắt Lưng: Đừng Chỉ Giảm Đau Bề Mặt! Hãy Giải Áp Tận Gốc</h2>
-                <h3>1. Nỗi đau thấu xương và sai lầm phổ biến</h3>
-                <p>Cơn đau thắt lưng âm ỉ rã rời khiến bạn không thể đứng lâu, mỗi lần cúi người hay trở mình là một luồng điện đau buốt phóng thẳng xuống chân do nhân nhầy đĩa đệm tràn ra...</p>
-                <h3>2. Phác đồ phục hồi tận gốc tại RegenX</h3>
-                <p>Phác đồ chuyên sâu tại RegenX phục hồi đĩa đệm hướng tới mục tiêu: Giải áp cơ học từ trường siêu dẫn SCM, tiêu viêm rễ thần kinh bên ngoài và nuôi dưỡng bồi bổ tạng Can Thận từ bên trong.</p>
+                <h3>1. Nỗi đau thấu xương và sai lầm từ các giải pháp "Bề Mắt"</h3>
+                <p>Cơn đau thắt lưng âm ỉ rã rời khiến bạn không thể đứng lâu, mỗi lần cúi người hay trở mình là một luồng điện đau buốt phóng thẳng xuống chân do nhân nhầy đĩa đệm tràn ra chèn ép rễ thần kinh tọa...</p>
                 <div class="modal-cta-box">
                     <h4>Lấy lại sự tự chủ cho cuộc sống và cột sống của bạn!</h4>
                     <p>Gửi kết quả phim chụp MRI hoặc X-Quang để Thầy đánh giá chi tiết từ xa.</p>
                     <a href="#tu-van" onclick="closeModal('modal-tvdd')" class="btn btn-teal">Đăng ký tư vấn phim chụp trực tiếp</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-oct" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-close-btn" onclick="closeModal('modal-oct')"><i class="fa-solid fa-xmark"></i></div>
+            <img src="https://i.postimg.cc/BvGRLZms/ong-co-tay.jpg" alt="Trị liệu hội chứng ống cổ tay cho bạn Lâm thực tế" class="modal-header-img">
+            <div class="modal-body">
+                <h2>Hội Chứng Ống Cổ Tay Ở Dân Văn Phòng: Biến Chứng Tê Bại Mất Cảm Giác Và Phác Đồ Phục Hồi Thần Tốc Không Phẫu Thuật</h2>
+                <h3>1. Tê bì, mất cảm giác cầm nắm và tiếng cầu cứu của đôi bàn tay</h3>
+                <p>Cơn đau nhức râm ran tê dại vùng ngón cái, ngón trỏ kéo dài thường bị bỏ qua, dẫn đến hệ lụy teo cơ mô cái và mất lực vận động tự nhiên. Điển hình như trường hợp của bạn Lâm trước khi tìm đến gặp Thầy: bàn tay gần như mất hoàn toàn cảm giác cơ học, cầm nắm vật dụng vô cùng khó khăn, ảnh hưởng nặng nề đến năng suất công việc văn phòng.</p>
+                <h3>2. Phân tích cơ chế chèn ép cơ học dưới góc nhìn chuyên sâu</h3>
+                <p>Dưới góc nhìn giải phẫu hiện đại, tư thế gập tì đè cổ tay liên tục khi làm việc tạo áp lực nén cực lớn làm viêm dày bao gân, siết chặt dây thần kinh giữa trong khoang ống cổ tay chật hẹp. Đông y đối chiếu thuộc chứng Thống tý, Ma mộc do kinh lạc vùng kinh Thủ quyết âm Tâm bào bị ách tắc, phong hàn thấp xâm nhập làm khí huyết không thể lưu thông nuôi dưỡng đầu chi.</p>
+                <h3>3. Phác đồ phục hồi thần tốc giải áp ống cổ tay tại RegenX</h3>
+                <p>Hành trình lấy lại đôi tay linh hoạt và nụ cười rạng rỡ của bạn Lâm là nhờ sự phối hợp chặt chẽ của phác đồ y khoa hiện đại và y học cổ truyền:</p>
+                <p><strong>- Công nghệ chuyển nhiệt sâu TECAR Therapy:</strong> Đi sâu làm mềm dây chằng vòng cổ tay, đánh tan dịch viêm gân, mở rộng khoang ống cổ tay giải phóng dây thần kinh bị bóp nghẹt.</p>
+                <p><strong>- Từ Trường Siêu Dẫn (SCM) công suất cao:</strong> Kích thích phục hồi tổn thương bao rễ thần kinh giữa, khôi phục tốc độ dẫn truyền tín hiệu giúp bàn tay bạn Lâm lấy lại toàn bộ cảm giác cơ học nhanh chóng ngay từ những buổi đầu.</p>
+                <p><strong>- Đông Y thông kinh hoạt lạc:</strong> Nhu nhuận gân xương, hoạt huyết toàn chi giúp đôi bàn tay dẻo dai bền vững.</p>
+                <div class="modal-cta-box">
+                    <h4>Đừng để hội chứng ống cổ tay tước đoạt đôi bàn tay linh hoạt của bạn!</h4>
+                    <p>Hãy liên hệ ngay để Thầy trực tiếp xem xét mức độ chèn ép thần kinh và định hướng phác đồ phù hợp.</p>
+                    <a href="#tu-van" onclick="closeModal('modal-oct')" class="btn btn-teal">Đăng ký tư vấn chấn thương cổ tay</a>
                 </div>
             </div>
         </div>
@@ -1290,12 +1236,10 @@
             document.getElementById(modalId).style.display = "flex";
             document.body.style.overflow = "hidden"; 
         }
-
         function closeModal(modalId) {
             document.getElementById(modalId).style.display = "none";
             document.body.style.overflow = "auto"; 
         }
-
         window.onclick = function(event) {
             if (event.target.classList.contains('modal-overlay')) {
                 event.target.style.display = "none";
@@ -1303,6 +1247,5 @@
             }
         }
     </script>
-
 </body>
 </html>
