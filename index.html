@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hệ Sinh Thái Phục Hồi Chuyên Sâu & Trị Liệu Hiện Đại kết hợp Đông Y</title>
-    <!-- Nhúng bộ Icon chất lượng cao -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -12,10 +11,10 @@
            HỆ THỐNG MÀU SẮC & PHONG CÁCH BRANDING REGENX (ĐEN NHÁM - VÀNG ĐỒNG)
            ========================================================================== */
         :root {
-            --navy-dark: #111111;    /* Đen nhám chủ đạo: Tĩnh lặng, đẳng cấp, chiều sâu */
-            --navy-light: #1C1C1C;   /* Xám than tối: Tạo khối và phân tách các phần */
-            --teal: #D4AF37;         /* Vàng đồng: Màu chữ X đặc trưng, biểu tượng cao cấp */
-            --gold: #F3E5AB;         /* Vàng kem nhẹ: Nhu nhuận gân xương, điểm xuyết tinh tế */
+            --navy-dark: #111111;    
+            --navy-light: #1C1C1C;   
+            --teal: #D4AF37;         
+            --gold: #F3E5AB;         
             --white: #FFFFFF;
             --light-gray: #F8F9FA;
             --text-main: #222222;
@@ -107,6 +106,20 @@
             background-color: var(--white);
             color: var(--navy-dark);
             transform: translateY(-2px);
+        }
+
+        /* CƠ CHẾ NÚT "XEM THÊM" THÔNG MINH TRÊN DI ĐỘNG */
+        .mobile-toggle-btn {
+            display: none; /* Mặc định ẩn trên Máy tính */
+            color: var(--teal);
+            background: none;
+            border: none;
+            font-weight: 700;
+            font-size: 13.5px;
+            cursor: pointer;
+            margin-top: 10px;
+            align-items: center;
+            gap: 5px;
         }
 
         /* ==========================================================================
@@ -210,7 +223,7 @@
         }
 
         /* ==========================================================================
-           3. NHÓM CÔNG NGHỆ CHỦ LỰC (SHOCKWAVE, TECAR, SCM...)
+           3. NHÓM CÔNG NGHỆ CHỦ LỰC
            ========================================================================== */
         .tech-section {
             padding: 70px 0;
@@ -257,7 +270,7 @@
         }
 
         /* ==========================================================================
-           4. NHÓM BỆNH LÝ TRỌNG TÂM (CỘT SỐNG & KHỚP)
+           4. NHÓM BỆNH LÝ TRỌNG TÂM
            ========================================================================== */
         .pathology-section {
             padding: 70px 0;
@@ -533,7 +546,7 @@
             color: var(--teal);
         }
 
-        /* HỆ THỐNG POPUP MODAL ĐỌC BÀI THÔNG MINH - KHẮC PHỤC LỖI KHUẤT CHỮ */
+        /* HỆ THỐNG POPUP MODAL ĐỌC BÀI TẠI CHỖ (THANH CUỘN ĐỘC LẬP) */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -552,9 +565,9 @@
             background-color: var(--white);
             width: 100%;
             max-width: 850px;
-            height: 90vh; /* Định hình chiều cao tối ưu */
+            height: 90vh; 
             border-radius: 12px;
-            overflow: hidden; /* Chặn vỡ khung */
+            overflow: hidden; 
             position: relative;
             animation: modalFadeIn 0.4s ease;
             box-shadow: 0 25px 50px rgba(0,0,0,0.4);
@@ -568,7 +581,7 @@
         }
 
         .modal-scroll-content {
-            overflow-y: auto; /* KÍCH HOẠT THANH CUỘN ĐỘC LẬP GIÚP ĐỌC HẾT BÀI SÂU */
+            overflow-y: auto; 
             flex-grow: 1;
             padding-bottom: 40px;
         }
@@ -598,7 +611,6 @@
             align-items: center;
             cursor: pointer;
             z-index: 100;
-            transition: all 0.3s;
         }
 
         .modal-close-btn:hover {
@@ -630,10 +642,6 @@
             line-height: 1.75;
             margin-bottom: 16px;
             text-align: justify;
-        }
-
-        .modal-body strong {
-            color: #000000;
         }
 
         .modal-body blockquote {
@@ -671,7 +679,6 @@
         .modal-cta-box p {
             color: var(--text-muted);
             font-size: 14px;
-            text-align: center;
             margin-bottom: 20px;
         }
 
@@ -884,7 +891,9 @@
             color: var(--teal);
         }
 
-        /* RESPONSIVE MEDIA QUERIES */
+        /* ==========================================================================
+           MÃ ĐIỀU PHỐI ĐA NỀN TẢNG - TỰ ĐỘNG THU GỌN CHỮ TRÊN ĐIỆN THOẠI
+           ========================================================================== */
         @media (max-width: 768px) {
             .navbar { flex-direction: column; gap: 10px; padding: 10px 0; }
             .nav-links { width: 100%; justify-content: center; flex-wrap: wrap; gap: 8px; }
@@ -900,6 +909,17 @@
             .pathology-box, .pricing-grid, .blog-grid { grid-template-columns: 1fr; gap: 20px; }
             .pathology-list { grid-template-columns: 1fr; }
             .pathology-img { height: 160px; margin-top: 10px; }
+            
+            /* Kích hoạt chế độ Cắt chữ / Ẩn bớt nội dung dài trên Mobile để giảm tải độ dài trang */
+            .mobile-hide-text {
+                display: none; 
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+            .mobile-toggle-btn {
+                display: flex; /* Hiện nút trên điện thoại */
+            }
+
             .modal-box { height: 95vh; }
             .modal-body { padding: 25px 20px; }
             .modal-body h2 { font-size: 19px; }
@@ -917,7 +937,6 @@
 </head>
 <body>
 
-    <!-- 1. THANH ĐIỀU HƯỚNG -->
     <header>
         <div class="container navbar">
             <a href="#" class="brand-logo">REGEN<span>X</span></a>
@@ -933,7 +952,6 @@
         </div>
     </header>
 
-    <!-- 2. HERO BANNER -->
     <section class="hero-section">
         <div class="container">
             <div class="hero-wrapper">
@@ -947,7 +965,6 @@
         </div>
     </section>
 
-    <!-- 3. NHÓM CÔNG NGHỆ CHỦ LỰC -->
     <section id="tech" class="tech-section">
         <div class="container">
             <div class="section-header">
@@ -963,7 +980,11 @@
                 <div class="tech-card">
                     <div class="tech-card-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
                     <h3>Shockwave & TECAR Therapy</h3>
-                    <p>Giải tỏa nhanh chóng các điểm xoắn cơ mãn tính, tăng tưới máu cục bộ và tái cấu trúc vùng xơ hóa dai dẳng.</p>
+                    <div class="mobile-text-container">
+                        <p>Giải tỏa nhanh chóng các điểm xoắn cơ mãn tính, tăng tưới máu cục bộ và tái cấu trúc vùng xơ hóa dai dẳng.</p>
+                        <span class="mobile-hide-text"><br>Dòng TECAR chuyển nhiệt sâu kết hợp bước sóng Shockwave tạo nên chuỗi sửa chữa cơ học hoàn mỹ cho các thớ cơ xơ hóa nặng.</span>
+                        <button class="mobile-toggle-btn" onclick="toggleMobileText(this)">Xem thêm phác đồ <i class="fa-solid fa-chevron-down"></i></button>
+                    </div>
                 </div>
                 <div class="tech-card">
                     <div class="tech-card-icon"><i class="fa-solid fa-seedling"></i></div>
@@ -974,7 +995,6 @@
         </div>
     </section>
 
-    <!-- 4. NHÓM BỆNH LÝ TRỌNG TÂM -->
     <section id="pathology" class="pathology-section">
         <div class="container">
             <div class="section-header">
@@ -1000,9 +1020,10 @@
                         <ul class="pathology-list">
                             <li><i class="fa-solid fa-circle-check"></i> Thoái hóa khớp gối</li>
                             <li><i class="fa-solid fa-circle-check"></i> Viêm quanh khớp vai</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Tennis Elbow</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Viêm cân gan chân</li>
+                            <li class="mobile-hide-text"><i class="fa-solid fa-circle-check"></i> Tennis Elbow</li>
+                            <li class="mobile-hide-text"><i class="fa-solid fa-circle-check"></i> Viêm cân gan chân</li>
                         </ul>
+                        <button class="mobile-toggle-btn" onclick="toggleMobileText(this)">Xem thêm bệnh lý <i class="fa-solid fa-chevron-down"></i></button>
                     </div>
                     <img src="https://i.postimg.cc/g2WSWqY1/Lat-so-mi.jpg" alt="Trị liệu phục hồi các khớp cơ học" class="pathology-img">
                 </div>
@@ -1010,7 +1031,6 @@
         </div>
     </section>
 
-    <!-- 4.5. KHU VỰC BẢNG GIÁ -->
     <section id="pricing" class="pricing-section">
         <div class="container">
             <div class="section-header">
@@ -1024,10 +1044,11 @@
                     <ul class="pricing-features">
                         <li><i class="fa-solid fa-check"></i> Khám, đánh giá phim chụp MRI/X-Ray chuyên sâu</li>
                         <li><i class="fa-solid fa-check"></i> Trị liệu Từ Trường Siêu Dẫn (SCM) giảm áp đĩa đệm</li>
-                        <li><i class="fa-solid fa-check"></i> Tích hợp TECAR giải tỏa co thắt cơ sâu vùng vai gáy/lưng</li>
-                        <li><i class="fa-solid fa-check"></i> Đông y phục hồi chính khí, nuôi dưỡng cột sống</li>
+                        <li class="mobile-hide-text"><i class="fa-solid fa-check"></i> Tích hợp TECAR giải tỏa cơ sâu vùng vai gáy/lưng</li>
+                        <li class="mobile-hide-text"><i class="fa-solid fa-check"></i> Đông y phục hồi chính khí, nuôi dưỡng cột sống</li>
                     </ul>
-                    <a href="#tu-van" class="pricing-btn">Đặt lịch trị liệu</a>
+                    <button class="mobile-toggle-btn" onclick="toggleMobileText(this)">Xem chi tiết buổi khám <i class="fa-solid fa-chevron-down"></i></button>
+                    <a href="#tu-van" class="pricing-btn" style="margin-top:15px;">Đặt lịch trị liệu</a>
                 </div>
                 <div class="pricing-card featured">
                     <h3>Runner Recovery Pro</h3>
@@ -1035,10 +1056,11 @@
                     <ul class="pricing-features">
                         <li><i class="fa-solid fa-star" style="color: var(--teal);"></i> Khám tầm soát chấn thương thể thao chuyên sâu</li>
                         <li><i class="fa-solid fa-check"></i> Xử lý điểm xoắn cơ, viêm gân cơ học bằng Sóng xung kích</li>
-                        <li><i class="fa-solid fa-check"></i> Trị liệu SCM cấp tốc phục hồi Achilles, IT Band, Shin Splint</li>
-                        <li><i class="fa-solid fa-check"></i> Kỹ thuật giải áp mô mềm cơ học sau race Marathon/Ultra Trail</li>
+                        <li class="mobile-hide-text"><i class="fa-solid fa-check"></i> Trị liệu SCM cấp tốc phục hồi Achilles, IT Band, Shin Splint</li>
+                        <li class="mobile-hide-text"><i class="fa-solid fa-check"></i> Kỹ thuật giải áp mô mềm cơ học sau race Marathon/Ultra Trail</li>
                     </ul>
-                    <a href="#tu-van" class="pricing-btn">Đăng ký phục hồi</a>
+                    <button class="mobile-toggle-btn" onclick="toggleMobileText(this)">Xem chi tiết buổi khám <i class="fa-solid fa-chevron-down"></i></button>
+                    <a href="#tu-van" class="pricing-btn" style="margin-top:15px;">Đăng ký phục hồi</a>
                 </div>
                 <div class="pricing-card">
                     <h3>Trị Liệu Các Khớp</h3>
@@ -1046,16 +1068,16 @@
                     <ul class="pricing-features">
                         <li><i class="fa-solid fa-check"></i> Kiểm tra biên độ vận động khớp (Gối, vai, cổ tay)</li>
                         <li><i class="fa-solid fa-check"></i> Ứng dụng Từ trường siêu dẫn kích thích tái tạo sụn khớp</li>
-                        <li><i class="fa-solid fa-check"></i> Siêu âm trị liệu / Laser công suất cao giảm viêm cục bộ</li>
-                        <li><i class="fa-solid fa-check"></i> Đông y chuyên sâu nuôi gân, nhu nhuận ổ khớp</li>
+                        <li class="mobile-hide-text"><i class="fa-solid fa-check"></i> Siêu âm trị liệu / Laser công suất cao giảm viêm cục bộ</li>
+                        <li class="mobile-hide-text"><i class="fa-solid fa-check"></i> Đông y chuyên sâu nuôi gân, nhu nhuận ổ khớp</li>
                     </ul>
-                    <a href="#tu-van" class="pricing-btn">Đặt lịch trị liệu</a>
+                    <button class="mobile-toggle-btn" onclick="toggleMobileText(this)">Xem chi tiết buổi khám <i class="fa-solid fa-chevron-down"></i></button>
+                    <a href="#tu-van" class="pricing-btn" style="margin-top:15px;">Đặt lịch trị liệu</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4.8. KHU VỰC TẠP CHÍ - GÓC KIẾN THỨC Y KHOA CHUYÊN SÂU -->
     <section id="blog" class="blog-section">
         <div class="container">
             <div class="section-header">
@@ -1063,7 +1085,6 @@
                 <p>Chia sẻ căn nguyên cơ học và phác đồ điều trị khoa học từ Thầy</p>
             </div>
             <div class="blog-grid">
-                <!-- Bài 1: Cổ vai gáy -->
                 <div class="blog-card" onclick="openModal('modal-cvg')">
                     <img src="https://i.postimg.cc/J0SNPmnM/Tri-lieu-vai-gay.jpg" alt="" class="blog-card-img">
                     <div class="blog-card-content">
@@ -1073,7 +1094,6 @@
                         <span class="blog-card-link">Đọc bài viết <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </div>
-                <!-- Bài 2: Runner -->
                 <div class="blog-card" onclick="openModal('modal-runner-art')">
                     <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=400&q=80" alt="" class="blog-card-img">
                     <div class="blog-card-content">
@@ -1083,7 +1103,6 @@
                         <span class="blog-card-link">Đọc bài viết <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </div>
-                <!-- Bài 3: Thoát vị đĩa đệm -->
                 <div class="blog-card" onclick="openModal('modal-tvdd')">
                     <img src="https://i.postimg.cc/8c7dRsTm/tri-lieu.jpg" alt="" class="blog-card-img">
                     <div class="blog-card-content">
@@ -1093,7 +1112,6 @@
                         <span class="blog-card-link">Đọc bài viết <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </div>
-                <!-- Bài 4: Ống cổ tay -->
                 <div class="blog-card" onclick="openModal('modal-oct')">
                     <img src="https://i.postimg.cc/T33QpWG4/ong-co-tay.jpg" alt="Trị liệu hội chứng ống cổ tay thực tế cho bạn Lâm" class="blog-card-img">
                     <div class="blog-card-content">
@@ -1107,7 +1125,6 @@
         </div>
     </section>
 
-    <!-- POPUP MODAL 1: CỔ VAI GÁY (FULL CHUYÊN SÂU - CÓ THANH CUỘN) -->
     <div id="modal-cvg" class="modal-overlay">
         <div class="modal-box">
             <div class="modal-close-btn" onclick="closeModal('modal-cvg')"><i class="fa-solid fa-xmark"></i></div>
@@ -1119,7 +1136,7 @@
                     <p>Mỗi ngày, có hàng nghìn người thức dậy với chiếc cổ cứng đờ, bả vai đau nhức âm ỉ như có hàng tấn đá đè lên, kèm theo những cơn tê bì lan dọc xuống cánh tay. Đối với dân văn phòng ngồi máy tính liên tục, tài xế lái xe đường dài, hay người trung niên bắt đầu thoái hóa, cơn đau này không đơn thuần là sự mệt mỏi cơ bắp thông thường. Đó là tiếng cầu cứu của hệ thống đĩa đệm và rễ thần kinh vùng cổ.</p>
                     <p>Sai lầm phổ biến nhất của người bệnh hiện nay là khi cơn đau ập tới, họ lập tức lạm dụng các liều thuốc giảm đau kháng viêm cấp tốc, miếng dán nhiệt, hoặc tìm đến các cơ sở xoa bóp giãn cơ bề mặt, thậm chí là tự ý đi "bẻ cổ" theo các clip trên mạng. Thuốc có thể đánh lừa đại não, cắt đứt cảm giác đau tạm thời, nhưng bên dưới da, tổn thương cơ học vẫn âm thầm tiến triển. Hậu quả là dạ dày bị tàn phá, trong khi vùng cổ vai gáy ngày càng xơ hóa thắt chặt, dẫn đến hẹp khe khớp, thiếu máu lên não gây chóng mặt, mất ngủ kinh niên, và nguy cơ bại liệt tay do chèn ép rễ thần kinh thể nặng.</p>
                     <h3>2. Phân tích khoa học: Cơ chế xơ hóa cơ học và góc nhìn "Thông bất thống" của Đông Y</h3>
-                    <p>Dưới góc nhìn của giải phẫu học hiện đại, tình trạng đau mỏi vùng cổ gáy xuất phát từ sự co thắt sợi cơ mãn tính tạo nên các điểm xoắn cơ (Trigger Points). Khi đầu liên tục cúi xuống, cơ thang và cơ nâng vai phải chịu áp lực cơ học gấp 3–4 lần bình thường để giữ trục đầu. Trạng thái gồng quá tải này làm giảm tưới máu cục bộ, tích tụ axit lactic và hình thành nên các dải xơ hóa thắt chặt như một chiếc thòng lọng, bóp nghẹt các mạch máu nuôi dưỡng và chèn ép trực tiếp lên rễ thần kinh cánh tay.</p>
+                    <p>Dưới góc nhìn của giải phẫu học hiện đại, tình trạng đau mỏi vùng cổ gáy xuất phát từ sự co thắt sợi cơ mãn tính tạo nên các điểm xoắn cơ (Trigger Points). Khi đầu liên tục cúi xuống, cơ thang và cơ nâng vai phải chịu áp lực cơ học gấp 3–4 lần bình thường để giữ trục đầu. Trạng thái gồng quá tải này làm giảm tưới máu cục bộ, tích tụ axit lactic và hình thành nên các dải xơ hóa thắt chặt như một chiếc thọng lọng, bóp nghẹt các mạch máu nuôi dưỡng và chèn ép trực tiếp lên rễ thần kinh cánh tay.</p>
                     <p>Song hành với y học hiện đại, Đông y cổ truyền định nghĩa hội chứng này thuộc phạm vi chứng Tý hoặc Kiên thống. Nguyên nhân cốt lõi là do Ngoại tà xâm nhập (Phong, Hàn, Thấp từ máy lạnh văn phòng) khiến cho kinh lạc bị ứ trệ, khí huyết không thông; kết hợp với Can Thận hư tổn làm gân cốt không được nuôi dưỡng đầy đủ, gân xương giòn dễ bị lệch trục.</p>
                     <blockquote>
                         <p>"Thông bất thống, thống bất thông" — Khi kinh lạc, khí huyết lưu thông mượt mà thì không đau; khi xuất hiện bế tắc, ứ trệ cục bộ thì cơn đau dữ dội sẽ bùng phát. Do đó, muốn trị dứt điểm, bắt buộc phải loại bỏ dải xơ hóa cơ học bên ngoài, giải áp thần kinh bên trong và thông suốt kinh lạc toàn vùng.</p>
@@ -1139,7 +1156,6 @@
         </div>
     </div>
 
-    <!-- POPUP MODAL 2: RUNNER (FULL CHUYÊN SÂU - CÓ THANH CUỘN) -->
     <div id="modal-runner-art" class="modal-overlay">
         <div class="modal-box">
             <div class="modal-close-btn" onclick="closeModal('modal-runner-art')"><i class="fa-solid fa-xmark"></i></div>
@@ -1167,7 +1183,6 @@
         </div>
     </div>
 
-    <!-- POPUP MODAL 3: THOÁT VỊ ĐĨA ĐỆ (FULL CHUYÊN SÂU - CÓ THANH CUỘN) -->
     <div id="modal-tvdd" class="modal-overlay">
         <div class="modal-box">
             <div class="modal-close-btn" onclick="closeModal('modal-tvdd')"><i class="fa-solid fa-xmark"></i></div>
@@ -1196,20 +1211,19 @@
         </div>
     </div>
 
-    <!-- POPUP MODAL 4: HỘI CHỨNG ỐNG CỔ TAY (FULL CHUYÊN SÂU - CÓ THANH CUỘN) -->
     <div id="modal-oct" class="modal-overlay">
         <div class="modal-box">
             <div class="modal-close-btn" onclick="closeModal('modal-oct')"><i class="fa-solid fa-xmark"></i></div>
             <div class="modal-scroll-content">
                 <img src="https://i.postimg.cc/T33QpWG4/ong-co-tay.jpg" alt="Trị liệu hội chứng ống cổ tay thực tế cho bạn Lâm" class="modal-header-img">
                 <div class="modal-body">
-                    <h2>Hội Chứng Ống Cổ Tay Ở Dân Văn Phòng: Biến Chứng Tê Bại Mất Cảm Giác Và Phác Đồ Phục Hồi Thần Tốc Không Phẫu Thuật Tại Biên Hòa</h2>
+                    <h2>Hội Chứng Ống Cổ Tay Ở Dân Văn Phòng: Biến Chứng Tê Bại Mất Cảm Giác Và Phác Đồ Phủ Hồi Thần Tốc Không Phẫu Thuật Tại Biên Hòa</h2>
                     <h3>1. Tê bì, mất cảm giác cầm nắm: Hồi chuông cảnh báo từ Hội chứng ống cổ tay bị bỏ lỡ</h3>
                     <p>Mỗi ngày, có vô số người phải chịu đựng cảm giác râm ran tê dại vùng ngón cái, ngón trỏ và ngón giữa mỗi khi cầm chuột máy tính, chạy xe máy hoặc làm việc. Nhiều người thường tặc lưỡi bỏ qua, nghĩ rằng chỉ do mỏi cơ thông thường và tự mua các loại thuốc giảm đau kháng viêm để dán hoặc uống.</p>
                     <p>Tuy nhiên, tổn thương cơ học âm thầm này chính là tiền đề dẫn đến biến chứng teo cơ mô ngón cái và mất lực vận động tự nhiên của bàn tay. <strong>Điển hình như trường hợp của bạn Lâm trước khi tìm đến gặp Thầy:</strong> Cơn đau nhức lan rộng khiến bàn tay gần như mất hoàn toàn cảm giác cơ học, cầm nắm vật dụng không còn tự chủ, mọi công việc văn phòng bị đình trệ nghiêm trọng. Nếu tiếp tục lạm dụng thuốc giảm đau bề mặt mà không giải phóng chèn ép, dây thần kinh giữa sẽ hoại tử sợi, buộc người bệnh phải đối mặt với ca phẫu thuật rạch mổ bao gân cổ tay đầy rủi ro xơ hóa sau mổ.</p>
                     <h3>2. Góc nhìn khoa học: Cơ chế chèn ép cơ học và chứng "Tê bại" dưới lăng kính Đông Y</h3>
                     <p>Dưới góc nhìn giải phẫu hiện đại, ống cổ tay là một khoảng không gian vô cùng chật hẹp chứa dây thần kinh giữa và hệ thống gân gấp ngón tay. Khi cổ tay bị gập hoặc tì đè liên tục lên bàn làm việc do gõ phím sai tư thế, áp lực cơ học trong ống cổ tay tăng vọt, gây viêm dày bao gân và tạo thành gọng kìm siết chặt dây thần kinh giữa — sợi thần kinh chịu trách nhiệm chi phối cảm giác và vận động chi phối bàn tay.</p>
-                    <p>Trong Đông y cổ truyền, Hội chứng ống cổ tay nằm trong phạm vi chứng Thống tý hoặc Ma mộc (Tê dại). Cân nguyên xuất phát từ tình trạng kinh lạc vùng cổ tay (Kinh Thủ quyết âm Tâm bào và Kinh Thủ thái âm Phế) bị ách tắc lâu ngày do lao lực đơn điệu, kết hợp với phong hàn thấp tà xâm nhập làm khí huyết không thể lưu thông nuôi dưỡng đầu chi, sinh ra hiện tượng tê bại, bất toại vận động.</p>
+                    <p>Trong Đông y cổ truyền, Hội chứng ống cổ tay nằm trong phạm vi chứng Thống tý hoặc Ma mộc (Tê dại). Căn nguyên xuất phát từ tình trạng kinh lạc vùng cổ tay (Kinh Thủ quyết âm Tâm bào và Kinh Thủ thái âm Phế) bị ách tắc lâu ngày do lao lực đơn điệu, kết hợp với phong hàn thấp tà xâm nhập làm khí huyết không thể lưu thông nuôi dưỡng đầu chi, sinh ra hiện tượng tê bại, bất toại vận động.</p>
                     <blockquote>
                         <p>"Thông bất thống, thống bất thông" — Kinh lạc thông suốt thì không đau mỏi; kinh lạc bế tắc thì tê bại lập tức bùng phát. Muốn khôi phục bàn tay cho bạn Lâm, bắt buộc phải giải áp cơ học ống cổ tay từ bên ngoài và hoạt huyết thông kinh toàn diện từ bên trong.</p>
                     </blockquote>
@@ -1228,7 +1242,6 @@
         </div>
     </div>
 
-    <!-- 5. RECOVERY CHO RUNNER -->
     <section id="runner" class="runner-section">
         <div class="container">
             <div class="section-header">
@@ -1253,7 +1266,6 @@
         </div>
     </section>
 
-    <!-- 6. HỆ THỐNG CHUYỂN ĐỔI CHẨN ĐOÁN -->
     <section id="tu-van" class="conversion-section">
         <div class="container">
             <div class="conversion-wrapper">
@@ -1294,7 +1306,6 @@
         </div>
     </section>
 
-    <!-- KHU VỰC ALBUM HÌNH ẢNH TRUNG TÂM THỰC TẾ -->
     <section style="padding: 60px 0; background-color: #ffffff; border-top: 1px solid #E2E8F0;">
         <div class="container">
             <div class="section-header" style="margin-bottom: 35px;">
@@ -1308,12 +1319,10 @@
         </div>
     </section>
 
-    <!-- 7. NÚT CHAT ZALO LIÊN KẾT TRỰC TIẾP HOTLINE -->
     <a href="https://zalo.me/0937010012" class="zalo-sticky" target="_blank" title="Trò chuyện qua Zalo: 0937.010.012">
         <i class="fa-solid fa-comment-dots"></i>
     </a>
 
-    <!-- 8. CHÂN TRANG FOOTER -->
     <footer>
         <div class="container footer-content">
             <div class="footer-info">
@@ -1328,7 +1337,6 @@
         </div>
     </footer>
 
-    <!-- INTERACTIVE MODAL JAVASCRIPT -->
     <script>
         function openModal(modalId) {
             document.getElementById(modalId).style.display = "flex";
@@ -1343,6 +1351,26 @@
                 event.target.style.display = "none";
                 document.body.style.overflow = "auto";
             }
+        }
+
+        // Hàm xử lý đóng mở chữ ngắn gọn thông minh trên di động
+        function toggleMobileText(button) {
+            // Tìm các thẻ ẩn cùng cấp trong khối cha
+            var parent = button.parentElement;
+            var hiddenTexts = parent.querySelectorAll('.mobile-hide-text');
+            
+            hiddenTexts.forEach(function(el) {
+                if (el.style.display === "inline" || el.style.display === "block") {
+                    el.style.display = "none";
+                    el.style.opacity = "0";
+                    button.innerHTML = 'Xem thêm ' + (button.innerText.includes('bệnh') ? 'bệnh lý' : button.innerText.includes('buổi') ? 'chi tiết' : 'phác đồ') + ' <i class="fa-solid fa-chevron-down"></i>';
+                } else {
+                    // Nếu là danh sách (thẻ li) thì hiện dạng block, còn chữ thường hiện dạng inline
+                    el.style.display = el.tagName === 'LI' ? 'flex' : 'inline';
+                    setTimeout(function() { el.style.opacity = "1"; }, 10);
+                    button.innerHTML = 'Thu gọn <i class="fa-solid fa-chevron-up"></i>';
+                }
+            });
         }
     </script>
 </body>
