@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hệ Sinh Thái Phục Hồi Chuyên Sâu & Trị Liệu Hiện Đại kết hợp Đông Y</title>
+    <!-- Nhúng bộ Icon chất lượng cao -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -532,14 +533,14 @@
             color: var(--teal);
         }
 
-        /* HỆ THỐNG POPUP MODAL ĐỌC BÀI TẠI CHỖ */
+        /* HỆ THỐNG POPUP MODAL ĐỌC BÀI THÔNG MINH - KHẮC PHỤC LỖI KHUẤT CHỮ */
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(17, 17, 17, 0.8);
+            background-color: rgba(17, 17, 17, 0.85);
             z-index: 2000;
             display: none;
             justify-content: center;
@@ -551,12 +552,14 @@
             background-color: var(--white);
             width: 100%;
             max-width: 850px;
-            max-height: 85vh;
+            height: 90vh; /* Định hình chiều cao tối ưu */
             border-radius: 12px;
-            overflow-y: auto;
+            overflow: hidden; /* Chặn vỡ khung */
             position: relative;
             animation: modalFadeIn 0.4s ease;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
         }
 
         @keyframes modalFadeIn {
@@ -564,9 +567,15 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        .modal-scroll-content {
+            overflow-y: auto; /* KÍCH HOẠT THANH CUỘN ĐỘC LẬP GIÚP ĐỌC HẾT BÀI SÂU */
+            flex-grow: 1;
+            padding-bottom: 40px;
+        }
+
         .modal-header-img {
             width: 100%;
-            height: 350px;
+            height: 320px;
             object-fit: cover;
         }
 
@@ -580,15 +589,16 @@
             right: 20px;
             font-size: 24px;
             color: var(--white);
-            background: rgba(0,0,0,0.4);
-            width: 40px;
-            height: 40px;
+            background: rgba(0,0,0,0.5);
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            z-index: 10;
+            z-index: 100;
+            transition: all 0.3s;
         }
 
         .modal-close-btn:hover {
@@ -599,31 +609,38 @@
         .modal-body h2 {
             font-size: 24px;
             color: var(--navy-dark);
-            margin-bottom: 20px;
+            margin-bottom: 22px;
             line-height: 1.4;
+            font-weight: 700;
         }
 
         .modal-body h3 {
             font-size: 18px;
             color: var(--navy-dark);
-            margin-top: 25px;
-            margin-bottom: 12px;
+            margin-top: 30px;
+            margin-bottom: 14px;
             font-weight: 600;
+            border-left: 4px solid var(--teal);
+            padding-left: 10px;
         }
 
         .modal-body p {
             font-size: 15px;
-            color: #333;
-            line-height: 1.7;
-            margin-bottom: 15px;
+            color: #333333;
+            line-height: 1.75;
+            margin-bottom: 16px;
             text-align: justify;
+        }
+
+        .modal-body strong {
+            color: #000000;
         }
 
         .modal-body blockquote {
             background-color: #FFFDF0;
             border-left: 4px solid var(--teal);
-            padding: 15px 20px;
-            margin: 20px 0;
+            padding: 18px 20px;
+            margin: 25px 0;
             font-style: italic;
             border-radius: 0 4px 4px 0;
         }
@@ -635,23 +652,27 @@
         }
 
         .modal-cta-box {
-            background-color: var(--navy-dark);
+            background: linear-gradient(135deg, var(--navy-dark) 0%, #222222 100%);
             color: var(--white);
-            padding: 30px;
+            padding: 35px;
             border-radius: 8px;
-            margin-top: 35px;
+            margin-top: 40px;
             text-align: center;
+            border: 1px solid var(--teal);
         }
 
         .modal-cta-box h4 {
-            font-size: 18px;
+            font-size: 19px;
             color: var(--teal);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-weight: 700;
         }
 
         .modal-cta-box p {
             color: var(--text-muted);
             font-size: 14px;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         /* ==========================================================================
@@ -879,8 +900,9 @@
             .pathology-box, .pricing-grid, .blog-grid { grid-template-columns: 1fr; gap: 20px; }
             .pathology-list { grid-template-columns: 1fr; }
             .pathology-img { height: 160px; margin-top: 10px; }
-            .modal-body { padding: 20px; }
-            .modal-body h2 { font-size: 18px; }
+            .modal-box { height: 95vh; }
+            .modal-body { padding: 25px 20px; }
+            .modal-body h2 { font-size: 19px; }
             .modal-header-img { height: 180px; }
             .runner-container { grid-template-columns: 1fr; gap: 30px; }
             .runner-text { text-align: center; }
@@ -895,6 +917,7 @@
 </head>
 <body>
 
+    <!-- 1. THANH ĐIỀU HƯỚNG -->
     <header>
         <div class="container navbar">
             <a href="#" class="brand-logo">REGEN<span>X</span></a>
@@ -910,6 +933,7 @@
         </div>
     </header>
 
+    <!-- 2. HERO BANNER -->
     <section class="hero-section">
         <div class="container">
             <div class="hero-wrapper">
@@ -923,6 +947,7 @@
         </div>
     </section>
 
+    <!-- 3. NHÓM CÔNG NGHỆ CHỦ LỰC -->
     <section id="tech" class="tech-section">
         <div class="container">
             <div class="section-header">
@@ -949,6 +974,7 @@
         </div>
     </section>
 
+    <!-- 4. NHÓM BỆNH LÝ TRỌNG TÂM -->
     <section id="pathology" class="pathology-section">
         <div class="container">
             <div class="section-header">
@@ -984,6 +1010,7 @@
         </div>
     </section>
 
+    <!-- 4.5. KHU VỰC BẢNG GIÁ -->
     <section id="pricing" class="pricing-section">
         <div class="container">
             <div class="section-header">
@@ -1028,6 +1055,7 @@
         </div>
     </section>
 
+    <!-- 4.8. KHU VỰC TẠP CHÍ - GÓC KIẾN THỨC Y KHOA CHUYÊN SÂU -->
     <section id="blog" class="blog-section">
         <div class="container">
             <div class="section-header">
@@ -1035,6 +1063,7 @@
                 <p>Chia sẻ căn nguyên cơ học và phác đồ điều trị khoa học từ Thầy</p>
             </div>
             <div class="blog-grid">
+                <!-- Bài 1: Cổ vai gáy -->
                 <div class="blog-card" onclick="openModal('modal-cvg')">
                     <img src="https://i.postimg.cc/J0SNPmnM/Tri-lieu-vai-gay.jpg" alt="" class="blog-card-img">
                     <div class="blog-card-content">
@@ -1044,6 +1073,7 @@
                         <span class="blog-card-link">Đọc bài viết <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </div>
+                <!-- Bài 2: Runner -->
                 <div class="blog-card" onclick="openModal('modal-runner-art')">
                     <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=400&q=80" alt="" class="blog-card-img">
                     <div class="blog-card-content">
@@ -1053,6 +1083,7 @@
                         <span class="blog-card-link">Đọc bài viết <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </div>
+                <!-- Bài 3: Thoát vị đĩa đệm -->
                 <div class="blog-card" onclick="openModal('modal-tvdd')">
                     <img src="https://i.postimg.cc/8c7dRsTm/tri-lieu.jpg" alt="" class="blog-card-img">
                     <div class="blog-card-content">
@@ -1062,6 +1093,7 @@
                         <span class="blog-card-link">Đọc bài viết <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </div>
+                <!-- Bài 4: Ống cổ tay -->
                 <div class="blog-card" onclick="openModal('modal-oct')">
                     <img src="https://i.postimg.cc/T33QpWG4/ong-co-tay.jpg" alt="Trị liệu hội chứng ống cổ tay thực tế cho bạn Lâm" class="blog-card-img">
                     <div class="blog-card-content">
@@ -1075,95 +1107,128 @@
         </div>
     </section>
 
+    <!-- POPUP MODAL 1: CỔ VAI GÁY (FULL CHUYÊN SÂU - CÓ THANH CUỘN) -->
     <div id="modal-cvg" class="modal-overlay">
         <div class="modal-box">
             <div class="modal-close-btn" onclick="closeModal('modal-cvg')"><i class="fa-solid fa-xmark"></i></div>
-            <img src="https://i.postimg.cc/J0SNPmnM/Tri-lieu-vai-gay.jpg" alt="" class="modal-header-img">
-            <div class="modal-body">
-                <h2>Hội Chứng Cổ Vai Gáy: Căn Nguyên Xơ Hóa Cơ Học Và Phác Đồ Phục Hồi Tận Gốc Bằng Công Nghệ SCM & TECAR Tại Biên Hòa</h2>
-                <h3>1. Cơn ác mộng mang tên "Đau mỏi cổ vai gáy" và cái bẫy của thuốc giảm đau cấp tốc</h3>
-                <p>Mỗi ngày, có hàng nghìn người thức dậy với chiếc cổ cứng đờ, bả vai đau nhức âm ỉ như có hàng tấn đá đè lên, kèm theo những cơn tê bì lan dọc xuống cánh tay...</p>
-                <h3>2. Phân tích khoa học: Cơ chế xơ hóa cơ học và góc nhìn "Thông bất thống" của Đông Y</h3>
-                <p>Dưới góc nhìn của giải phẫu học hiện đại, tình trạng đau mỏi vùng cổ gáy xuất phát từ sự co thắt sợi cơ mãn tính tạo nên các điểm xoắn cơ (Trigger Points)...</p>
-                <blockquote>
-                    <p>"Thông bất thống, thống bất thông" — Khi kinh lạc, khí huyết lưu thông mượt mà thì không đau; khi xuất hiện bế tắc, ứ trệ cục bộ thì cơn đau dữ dội sẽ bùng phát.</p>
-                </blockquote>
-                <div class="modal-cta-box">
-                    <h4>Chủ động bảo vệ cột sống cổ trước khi quá muộn!</h4>
-                    <p>Hãy dành lại sự nhẹ nhõm cho vùng cổ vai gáy của bạn ngay hôm nay cùng Thầy.</p>
-                    <a href="#tu-van" onclick="closeModal('modal-cvg')" class="btn btn-teal">Gửi thông tin / Kết nối Zalo tư vấn</a>
+            <div class="modal-scroll-content">
+                <img src="https://i.postimg.cc/J0SNPmnM/Tri-lieu-vai-gay.jpg" alt="" class="modal-header-img">
+                <div class="modal-body">
+                    <h2>Hội Chứng Cổ Vai Gáy: Căn Nguyên Xơ Hóa Cơ Học Và Phác Đồ Phục Hồi Tận Gốc Bằng Công Nghệ SCM & TECAR Tại Biên Hòa</h2>
+                    <h3>1. Cơn ác mộng mang tên "Đau mỏi cổ vai gáy" và cái bẫy của thuốc giảm đau cấp tốc</h3>
+                    <p>Mỗi ngày, có hàng nghìn người thức dậy với chiếc cổ cứng đờ, bả vai đau nhức âm ỉ như có hàng tấn đá đè lên, kèm theo những cơn tê bì lan dọc xuống cánh tay. Đối với dân văn phòng ngồi máy tính liên tục, tài xế lái xe đường dài, hay người trung niên bắt đầu thoái hóa, cơn đau này không đơn thuần là sự mệt mỏi cơ bắp thông thường. Đó là tiếng cầu cứu của hệ thống đĩa đệm và rễ thần kinh vùng cổ.</p>
+                    <p>Sai lầm phổ biến nhất của người bệnh hiện nay là khi cơn đau ập tới, họ lập tức lạm dụng các liều thuốc giảm đau kháng viêm cấp tốc, miếng dán nhiệt, hoặc tìm đến các cơ sở xoa bóp giãn cơ bề mặt, thậm chí là tự ý đi "bẻ cổ" theo các clip trên mạng. Thuốc có thể đánh lừa đại não, cắt đứt cảm giác đau tạm thời, nhưng bên dưới da, tổn thương cơ học vẫn âm thầm tiến triển. Hậu quả là dạ dày bị tàn phá, trong khi vùng cổ vai gáy ngày càng xơ hóa thắt chặt, dẫn đến hẹp khe khớp, thiếu máu lên não gây chóng mặt, mất ngủ kinh niên, và nguy cơ bại liệt tay do chèn ép rễ thần kinh thể nặng.</p>
+                    <h3>2. Phân tích khoa học: Cơ chế xơ hóa cơ học và góc nhìn "Thông bất thống" của Đông Y</h3>
+                    <p>Dưới góc nhìn của giải phẫu học hiện đại, tình trạng đau mỏi vùng cổ gáy xuất phát từ sự co thắt sợi cơ mãn tính tạo nên các điểm xoắn cơ (Trigger Points). Khi đầu liên tục cúi xuống, cơ thang và cơ nâng vai phải chịu áp lực cơ học gấp 3–4 lần bình thường để giữ trục đầu. Trạng thái gồng quá tải này làm giảm tưới máu cục bộ, tích tụ axit lactic và hình thành nên các dải xơ hóa thắt chặt như một chiếc thòng lọng, bóp nghẹt các mạch máu nuôi dưỡng và chèn ép trực tiếp lên rễ thần kinh cánh tay.</p>
+                    <p>Song hành với y học hiện đại, Đông y cổ truyền định nghĩa hội chứng này thuộc phạm vi chứng Tý hoặc Kiên thống. Nguyên nhân cốt lõi là do Ngoại tà xâm nhập (Phong, Hàn, Thấp từ máy lạnh văn phòng) khiến cho kinh lạc bị ứ trệ, khí huyết không thông; kết hợp với Can Thận hư tổn làm gân cốt không được nuôi dưỡng đầy đủ, gân xương giòn dễ bị lệch trục.</p>
+                    <blockquote>
+                        <p>"Thông bất thống, thống bất thông" — Khi kinh lạc, khí huyết lưu thông mượt mà thì không đau; khi xuất hiện bế tắc, ứ trệ cục bộ thì cơn đau dữ dội sẽ bùng phát. Do đó, muốn trị dứt điểm, bắt buộc phải loại bỏ dải xơ hóa cơ học bên ngoài, giải áp thần kinh bên trong và thông suốt kinh lạc toàn vùng.</p>
+                    </blockquote>
+                    <h3>3. Phác đồ tích hợp đột phá tại RegenX Biên Hòa: Khi Công nghệ đỉnh cao kết nối Đông Y Chuyên Sâu</h3>
+                    <p>Tại RegenX (248 Quốc lộ 51, Long Hưng, Biên Hòa), phác đồ phục hồi cổ vai gáy được thiết kế cá thể hóa, tích hợp sức mạnh của bộ đôi công nghệ tân tiến bậc nhất thế giới cùng tinh hoa y học cổ truyền:</p>
+                    <p><strong>- Công nghệ chuyển nhiệt sâu TECAR Therapy:</strong> Dòng điện đảo chiều của TECAR xuyên sâu vào tận lõi cơ, đích thân đánh tan các dải xơ hóa mãn tính, giải tỏa hoàn toàn các điểm xoắn cơ (Trigger points), tăng tuần hoàn máu cục bộ đưa dưỡng chất đến chữa lành mô tổn thương sâu.</p>
+                    <p><strong>- Từ Trường Siêu Dẫn (SCM) công suất cao:</strong> Sở hữu bước sóng xuyên thấu cực mạnh, từ trường siêu dẫn SCM tác động trực tiếp lên cấp độ tế bào, làm giảm viêm rễ thần kinh, giải phóng sự chèn ép tại các khe đốt sống cổ, chấm dứt ngay tình trạng tê bì lan xuống tay.</p>
+                    <p><strong>- Đông Y phục hồi chuyên sâu:</strong> Các liệu pháp y học cổ truyền giúp hoạt huyết hóa ứ, khu phong tán hàn, bồi bổ can thận, làm nhu nhuận gân xương từ bên trong để thiết lập hàng rào bảo vệ vững chắc ngăn ngừa bệnh tái phát bền vững.</p>
+                    <div class="modal-cta-box">
+                        <h4>Chủ động bảo vệ cột sống cổ trước khi quá muộn!</h4>
+                        <p>Hãy dành lại sự nhẹ nhõm cho vùng cổ vai gáy của bạn ngay hôm nay cùng Thầy.</p>
+                        <a href="#tu-van" onclick="closeModal('modal-cvg')" class="btn btn-teal">Gửi thông tin / Kết nối Zalo tư vấn</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- POPUP MODAL 2: RUNNER (FULL CHUYÊN SÂU - CÓ THANH CUỘN) -->
     <div id="modal-runner-art" class="modal-overlay">
         <div class="modal-box">
             <div class="modal-close-btn" onclick="closeModal('modal-runner-art')"><i class="fa-solid fa-xmark"></i></div>
-            <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=850&q=80" alt="" class="modal-header-img">
-            <div class="modal-body">
-                <h2>Tối Ưu Tốc Độ Phục Hồi Sau Race: Giải Pháp Xử Lý Chấn Thương IT Band, Achilles Và Shin Splints Bằng Công Nghệ SCM</h2>
-                <h3>1. Nỗi đau phía sau vạch đích</h3>
-                <p>Hội chứng dải chậu hông (IT Band), viêm gân gót chân (Achilles), và hội chứng đau cẳng chân (Shin Splints) chính là "bộ ba sát thủ" bào mòn phong độ của biết bao runner...</p>
-                <div class="modal-cta-box">
-                    <h4>Đừng để chấn thương cướp đi PR tiếp theo của bạn!</h4>
-                    <p>Hãy để Thầy đồng hành cùng đôi chân đam mê của bạn trên mọi cung đường.</p>
-                    <a href="#tu-van" onclick="closeModal('modal-runner-art')" class="btn btn-teal">Đăng ký phục hồi chuyên sâu cho Runner</a>
+            <div class="modal-scroll-content">
+                <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=850&q=80" alt="" class="modal-header-img">
+                <div class="modal-body">
+                    <h2>Tối Ưu Tốc Độ Phục Hồi Sau Race: Giải Pháp Xử Lý Chấn Thương IT Band, Achilles Và Shin Splints Bằng Công Nghệ SCM & Shockwave</h2>
+                    <h3>1. Nỗi đau phía sau vạch đích: Khi ý chí kiên cường phải chịu thua chấn thương cơ học</h3>
+                    <p>Hội chứng dải chậu hông (IT Band), viêm gân gót chân (Achilles), và hội chứng đau cẳng chân (Shin Splints) chính là "bộ ba sát thủ" bào mòn phong độ và dập tắt đam mê của biết bao runner sau mỗi giải Marathon hay Ultra Trail khắc nghiệt. Sai lầm chí mạng của các vận động viên là xem thường các cơn đau chớm nở, tiếp tục nén đau để cày Mileage, hoặc lạm dụng xịt lạnh, uống thuốc giảm đau để đánh lừa cảm giác rồi vào vạch xuất phát. Việc ức chế cơn đau bằng hóa chất chỉ làm trầm trọng thêm các vết rách vi thể (micro-tears) ở sợi gân, chuyển vị tổn thương sang mãn tính và nguy cơ rách đứt gân cơ học hoàn toàn.</p>
+                    <h3>2. Phân tích khoa học dưới góc nhìn Chấn thương thể thao & Y học cổ truyền</h3>
+                    <p>Về mặt cơ sinh học, chạy bộ đường dài là bộ môn chịu áp lực dồn nén mang tính chu kỳ lặp đi lặp lại hàng vạn lần. Lực ma sát dải chậu hông lên lồi cầu ngoài xương đùi, hoặc lực kéo quá tải từ bắp chân dồn lên gân gót vượt quá giới hạn đàn hồi tự nhiên của gân cơ chày sau sẽ hình thành các dải điểm xơ cứng dính mô cơ (adhesions). </p>
+                    <p>Dưới lăng kính của Đông y, vận động cực đại dài ngày tiêu tốn lượng lớn tân dịch và khí huyết chi dưới, dẫn đến trạng thái Khí huyết bất túc. Khi chạy địa hình băng rừng vượt suối, ngoại tà (Phong, Hàn, Thấp) thừa cơ xâm nhập gây ách tắc ứ trệ hệ kinh lạc chân. Gân cốt không được nuôi dưỡng đầy đủ sẽ giòn, dễ rách xơ hóa và mất đi độ đàn hồi cơ học tự nhiên.</p>
+                    <h3>3. Phác đồ Recovery chuyên biệt tại RegenX: Nâng tầm phong độ thần tốc cho VĐV</h3>
+                    <p>Một phác đồ Recovery chuẩn cho runner không chỉ là massage thư giãn bề mặt, mà là tái cấu trúc sửa chữa sâu mô gân cơ bị tổn thương cơ học:</p>
+                    <p><strong>- Sóng xung kích Shockwave Therapy:</strong> Đóng vai trò như một mũi nhọn chính xác, sóng âm năng lượng cực đại đánh tan các mô sẹo xơ hóa xù xì bám lỳ trên gân Achilles hoặc giải tỏa thắt nghẹt dải chậu hông, kích thích tăng sinh mạch máu mới (Angiogenesis) để tái cấu trúc collagen gân dẻo dai.</p>
+                    <p><strong>- Từ Trường Siêu Dẫn (SCM) công suất cao:</strong> Bước sóng điện từ xuyên thấu hoàn toàn qua các lớp cơ đùi và bắp chân dày, thúc đẩy sản sinh năng lượng ATP giúp tế bào gân cơ tự tái tạo chữa lành thần tốc, dập tắt ngay hiện tượng sưng viêm phù nề và nhức mỏi tích axit lactic sau race.</p>
+                    <p><strong>- Đông Y hoạt huyết, nhu nhuận gân cốt:</strong> Lưu thông kinh khí, đào thải nhanh độc tố cơ bắp chân, bồi bổ can thận phục hồi gân xương đàn hồi linh hoạt tối đa cho mục tiêu giải chạy kế tiếp.</p>
+                    <div class="modal-cta-box">
+                        <h4>Đừng để chấn thương cướp đi PR tiếp theo của bạn!</h4>
+                        <p>Hãy để Thầy đồng hành cùng đôi chân đam mê của bạn trên mọi cung đường.</p>
+                        <a href="#tu-van" onclick="closeModal('modal-runner-art')" class="btn btn-teal">Đăng ký phục hồi chuyên sâu cho Runner</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- POPUP MODAL 3: THOÁT VỊ ĐĨA ĐỆ (FULL CHUYÊN SÂU - CÓ THANH CUỘN) -->
     <div id="modal-tvdd" class="modal-overlay">
         <div class="modal-box">
             <div class="modal-close-btn" onclick="closeModal('modal-tvdd')"><i class="fa-solid fa-xmark"></i></div>
-            <img src="https://i.postimg.cc/8c7dRsTm/tri-lieu.jpg" alt="" class="modal-header-img">
-            <div class="modal-body">
-                <h2>Thoát Vị Đĩa Đệm Cột Sống Thắt Lưng: Đừng Chỉ Giảm Đau Bề Mặt! Hãy Giải Áp Tận Gốc</h2>
-                <h3>1. Nỗi đau thấu xương và sai lầm từ các giải pháp "Bề Mặt"</h3>
-                <p>Cơn đau thắt lưng âm ỉ rã rời khiến bạn không thể đứng lâu, mỗi lần cúi người hay trở mình là một luồng điện đau buốt phóng thẳng xuống chân do nhân nhầy đĩa đệm tràn ra chèn ép rễ thần kinh tọa...</p>
-                <div class="modal-cta-box">
-                    <h4>Lấy lại sự tự chủ cho cuộc sống và cột sống của bạn!</h4>
-                    <p>Gửi kết quả phim chụp MRI hoặc X-Quang để Thầy đánh giá chi tiết từ xa.</p>
-                    <a href="#tu-van" onclick="closeModal('modal-tvdd')" class="btn btn-teal">Đăng ký tư vấn phim chụp trực tiếp</a>
+            <div class="modal-scroll-content">
+                <img src="https://i.postimg.cc/8c7dRsTm/tri-lieu.jpg" alt="" class="modal-header-img">
+                <div class="modal-body">
+                    <h2>Thoát Vị Đĩa Đệm Cột Sống Thắt Lưng: Đừng Chỉ Giảm Đau Bề Mặt! Hãy Giải Áp Tận Gốc Bằng Công Nghệ SCM & Đông Y</h2>
+                    <h3>1. Nỗi đau thấu xương và sai lầm từ các giải pháp điều trị "Bề Mặt"</h3>
+                    <p>Không có nỗi ám ảnh nào dai dẳng và bào mòn tinh thần con người khủng khiếp như những cơn đau do thoát vị đĩa đệm cột sống thắt lưng gây ra. Cơn đau thắt lưng âm ỉ rã rời khiến bạn không thể đứng lâu, không thể ngồi thẳng, mỗi lần cúi người hay trở mình trên giường là một lần chịu đựng luồng điện đau buốt phóng thẳng xuống mông, đùi và các ngón chân. Khi đĩa đệm bị rách, nhân nhầy tràn ra chèn ép rễ thần kinh tọa, cuộc sống của người bệnh dần thu hẹp lại trong sự bất lực, lo âu về nguy cơ teo cơ hay liệt chân dai dẳng.</p>
+                    <p>Trước nỗi đau quá lớn, đa số người bệnh đang rơi vào những sai lầm. Họ liên tục uống các đơn thuốc giảm đau liều cao, thuốc bắc pha trộn corticoid vô tội vạ để đổi lấy vài giờ dịu đau giả tạo, đánh đổi lại bằng việc suy tuyến thượng thận và loét dạ dày nghiêm trọng. Số khác lại cả tin giao phó cột sống cho những thầy lang vườn bẻ khớp thô bạo, hoặc vội vã chọn phương án phẫu thuật khi chưa thực sự cần thiết, đối mặt với rủi ro xơ hóa sẹo sau mổ và phá vỡ cấu trúc cơ sinh học của cột sống.</p>
+                    <h3>2. Phân tích khoa học sâu sắc: Cơ chế cơ sinh học và lý luận Can Thận hư tổn</h3>
+                    <p>Về mặt giải phẫu học hiện đại, đĩa đệm cột sống thắt lưnghoạt động như một hệ thống giảm xóc thủy lực cao cấp. Khi cột sống chịu tải trọng sai lệch kéo dài, bao xơ bên ngoài đĩa đệm sẽ xuất hiện các vết nứt rách. Dưới áp lực cơ học dồn nén liên tục, nhân nhầy bên trong sẽ thoát vị ra ngoài, tạo thành một khối chèn ép cơ học trực tiếp vào rễ thần kinh tọa, gây ra phản ứng viêm hóa học dữ dội dẫn đến đau buốt và tê bì chi dưới.</p>
+                    <p>Đông y đối chiếu thuộc chứng Yêu thống, liên quan mật thiết đến sự suy hải của tạng Can và Thận. Thận tinh suy yếu khiến đĩa đệm mất nước, mất tính đàn hồi. Can huyết kém không nuôi dưỡng được hệ dây chằng chống đỡ quanh cột sống, dẫn đến khí trệ huyết ứ, bế tắc kinh lạc tạo thành vòng xoắn bệnh lý thoái hóa sâu.</p>
+                    <h3>3. Phác đồ phục hồi tận gốc đĩa đệm tại RegenX: Tích hợp SCM, TECAR và Đông Y Cổ Truyền</h3>
+                    <p>Phác đồ chuyên sâu tại RegenX phục hồi đĩa đệm hướng tới mục tiêu: Giải áp cơ học, tiêu viêm rễ thần kinh bên ngoài và nuôi dưỡng tái tạo bao xơ đĩa đệm từ bên trong:</p>
+                    <p><strong>- Từ Trường Siêu Dẫn (SCM) công suất cao:</strong> Tác động xuyên sâu tuyệt đối qua khối cơ lưng dày vào tận đĩa đệm tổn thương, kích thích tái cực màng tế bào, giảm viêm hóa học rễ thần kinh và hỗ trợ thu hồi khối thoát vị tự nhiên một cách an toàn mà không cần lực kéo kéo thô bạo.</p>
+                    <p><strong>- Công nghệ chuyển nhiệt sâu TECAR Therapy:</strong> Giải tỏa hoàn toàn sự co thắt của các khối cơ dựng gai sống lưng — tác nhân chính tạo lực ép liên tục lên đĩa đệm, tăng tuần hoàn tưới máu nuôi các đốt sống thoái hóa.</p>
+                    <p><strong>- Đông Y phục hồi can thận:</strong> Bài thuốc tinh túy giúp hoạt huyết hóa ứ, bồi bổ tinh tủy từ gốc để tái cấu trúc hệ thống dây chằng cột sống vững chắc bền vững.</p>
+                    <div class="modal-cta-box">
+                        <h4>Lấy lại sự tự chủ cho cuộc sống và cột sống của bạn!</h4>
+                        <p>Gửi kết quả phim chụp MRI hoặc X-Quang để Thầy đánh giá chi tiết từ xa.</p>
+                        <a href="#tu-van" onclick="closeModal('modal-tvdd')" class="btn btn-teal">Đăng ký tư vấn phim chụp trực tiếp</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- POPUP MODAL 4: HỘI CHỨNG ỐNG CỔ TAY (FULL CHUYÊN SÂU - CÓ THANH CUỘN) -->
     <div id="modal-oct" class="modal-overlay">
         <div class="modal-box">
             <div class="modal-close-btn" onclick="closeModal('modal-oct')"><i class="fa-solid fa-xmark"></i></div>
-            <img src="https://i.postimg.cc/T33QpWG4/ong-co-tay.jpg" alt="Trị liệu hội chứng ống cổ tay thực tế cho bạn Lâm" class="modal-header-img">
-            <div class="modal-body">
-                <h2>Hội Chứng Ống Cổ Tay Ở Dân Văn Phòng: Biến Chứng Tê Bại Mất Cảm Giác Và Phác Đồ Phục Hồi Thần Tốc Không Phẫu Thuật Tại Biên Hòa</h2>
-                
-                <h3>1. Tê bì, mất cảm giác cầm nắm: Hồi chuông cảnh báo từ Hội chứng ống cổ tay bị bỏ lỡ</h3>
-                <p>Mỗi ngày, có vô số người phải chịu đựng cảm giác râm ran tê dại vùng ngón cái, ngón trỏ và ngón giữa mỗi khi cầm chuột máy tính, chạy xe máy hoặc làm việc. Nhiều người thường tặc lưỡi bỏ qua, nghĩ rằng chỉ do mỏi cơ thông thường và tự mua các loại thuốc giảm đau kháng viêm để dán hoặc uống.</p>
-                <p>Tuy nhiên, tổn thương cơ học âm thầm này chính là tiền đề dẫn đến biến chứng teo cơ mô ngón cái và mất lực vận động tự nhiên của bàn tay. <strong>Điển hình như trường hợp của bạn Lâm trước khi tìm đến gặp Thầy:</strong> Cơn đau nhức lan rộng khiến bàn tay gần như mất hoàn toàn cảm giác cơ học, cầm nắm vật dụng không còn tự chủ, mọi công việc văn phòng bị đình trệ nghiêm trọng. Nếu tiếp tục lạm dụng thuốc giảm đau bề mặt mà không giải phóng chèn ép, dây thần kinh giữa sẽ hoại tử sợi, buộc người bệnh phải đối mặt với ca phẫu thuật rạch mổ bao gân cổ tay đầy rủi ro xơ hóa sau mổ.</p>
-
-                <h3>2. Góc nhìn khoa học: Cơ chế chèn ép cơ học và chứng "Tê bại" dưới lăng kính Đông Y</h3>
-                <p>Dưới góc nhìn giải phẫu hiện đại, ống cổ tay là một khoảng không gian vô cùng chật hẹp chứa dây thần kinh giữa và hệ thống gân gấp ngón tay. Khi cổ tay bị gập hoặc tì đè liên tục lên bàn làm việc do gõ phím sai tư thế, áp lực cơ học trong ống cổ tay tăng vọt, gây viêm dày bao gân và tạo thành gọng kìm siết chặt dây thần kinh giữa — sợi thần kinh chịu trách nhiệm chi phối cảm giác và vận động chi phối bàn tay.</p>
-                <p>Trong Đông y cổ truyền, Hội chứng ống cổ tay nằm trong phạm vi chứng Thống tý hoặc Ma mộc (Tê dại). Căn nguyên xuất phát từ tình trạng kinh lạc vùng cổ tay bị ách tắc lâu ngày do lao lực đơn điệu, kết hợp với phong hàn thấp tà xâm nhập làm khí huyết không thể lưu thông nuôi dưỡng đầu chi, sinh ra hiện tượng tê bại, bất toại vận động.</p>
-                <blockquote>
-                    <p>"Thông bất thống, thống bất thông" — Kinh lạc thông suốt thì không đau mỏi; kinh lạc bế tắc thì tê bại lập tức bùng phát. Muốn khôi phục bàn tay cho bạn Lâm, bắt buộc phải giải áp cơ học ống cổ tay từ bên ngoài và hoạt huyết thông kinh toàn diện từ bên trong.</p>
-                </blockquote>
-
-                <h3>3. Phác đồ tích hợp đột phá tại RegenX Biên Hòa: Hành trình khôi phục bàn tay khỏe mạnh cho bạn Lâm</h3>
-                <p>Nhìn vào nụ cười rạng rỡ hiện tại của bạn Lâm khi đôi bàn tay đã khôi phục hoàn toàn cảm giác cơ học, cầm nắm tự tin linh hoạt, đó là thành quả xứng đáng từ phác đồ tích hợp đột phá giữa công nghệ đỉnh cao và y học cổ truyền tại trung tâm:</p>
-                <p><strong>- Công nghệ chuyển nhiệt sâu TECAR Therapy:</strong> Năng lượng chuyển nhiệt thông minh đi sâu làm mềm dây chằng vòng cổ tay, đánh tan dịch sưng viêm của các bao gân gấp, mở rộng khoang ống cổ tay một cách tự nhiên để giải phóng dây thần kinh giữa khỏi gọng kìm siết chặt.</p>
-                <p><strong>- Từ Trường Siêu Dẫn (SCM) công suất cao:</strong> Bước sóng xuyên thấu tuyệt đối qua các khớp xương cổ tay, tác động mạnh mẽ vào lõi dây thần kinh giữa bị tổn thương, kích thích tái cực màng tế bào thần kinh, khôi phục tốc độ dẫn truyền tín hiệu cảm giác, giúp bàn tay bạn Lâm khôi phục cảm giác cơ học nhanh chóng ngay từ những buổi đầu.</p>
-                <p><strong>- Đông Y thông kinh hoạt lạc chuyên sâu:</strong> Liệu pháp cổ truyền giúp hóa giải tình trạng ứ trệ, nhu nhuận gân xương, hoạt huyết nuôi dưỡng các thớ cơ chi dưới dẻo dai, thiết lập hiệu quả phục hồi bền vững lâu dài không tái phát.</p>
-
-                <div class="modal-cta-box">
-                    <h4>Đừng để hội chứng ống cổ tay tước đoạt đôi bàn tay linh hoạt của bạn!</h4>
-                    <p>Hãy liên hệ ngay hôm nay để Thầy trực tiếp xem xét mức độ chèn ép thần kinh và định hướng phác đồ phù hợp.</p>
-                    <a href="#tu-van" onclick="closeModal('modal-oct')" class="btn btn-teal">Đăng ký tư vấn chấn thương cổ tay trực tiếp cùng Thầy</a>
+            <div class="modal-scroll-content">
+                <img src="https://i.postimg.cc/T33QpWG4/ong-co-tay.jpg" alt="Trị liệu hội chứng ống cổ tay thực tế cho bạn Lâm" class="modal-header-img">
+                <div class="modal-body">
+                    <h2>Hội Chứng Ống Cổ Tay Ở Dân Văn Phòng: Biến Chứng Tê Bại Mất Cảm Giác Và Phác Đồ Phục Hồi Thần Tốc Không Phẫu Thuật Tại Biên Hòa</h2>
+                    <h3>1. Tê bì, mất cảm giác cầm nắm: Hồi chuông cảnh báo từ Hội chứng ống cổ tay bị bỏ lỡ</h3>
+                    <p>Mỗi ngày, có vô số người phải chịu đựng cảm giác râm ran tê dại vùng ngón cái, ngón trỏ và ngón giữa mỗi khi cầm chuột máy tính, chạy xe máy hoặc làm việc. Nhiều người thường tặc lưỡi bỏ qua, nghĩ rằng chỉ do mỏi cơ thông thường và tự mua các loại thuốc giảm đau kháng viêm để dán hoặc uống.</p>
+                    <p>Tuy nhiên, tổn thương cơ học âm thầm này chính là tiền đề dẫn đến biến chứng teo cơ mô ngón cái và mất lực vận động tự nhiên của bàn tay. <strong>Điển hình như trường hợp của bạn Lâm trước khi tìm đến gặp Thầy:</strong> Cơn đau nhức lan rộng khiến bàn tay gần như mất hoàn toàn cảm giác cơ học, cầm nắm vật dụng không còn tự chủ, mọi công việc văn phòng bị đình trệ nghiêm trọng. Nếu tiếp tục lạm dụng thuốc giảm đau bề mặt mà không giải phóng chèn ép, dây thần kinh giữa sẽ hoại tử sợi, buộc người bệnh phải đối mặt với ca phẫu thuật rạch mổ bao gân cổ tay đầy rủi ro xơ hóa sau mổ.</p>
+                    <h3>2. Góc nhìn khoa học: Cơ chế chèn ép cơ học và chứng "Tê bại" dưới lăng kính Đông Y</h3>
+                    <p>Dưới góc nhìn giải phẫu hiện đại, ống cổ tay là một khoảng không gian vô cùng chật hẹp chứa dây thần kinh giữa và hệ thống gân gấp ngón tay. Khi cổ tay bị gập hoặc tì đè liên tục lên bàn làm việc do gõ phím sai tư thế, áp lực cơ học trong ống cổ tay tăng vọt, gây viêm dày bao gân và tạo thành gọng kìm siết chặt dây thần kinh giữa — sợi thần kinh chịu trách nhiệm chi phối cảm giác và vận động chi phối bàn tay.</p>
+                    <p>Trong Đông y cổ truyền, Hội chứng ống cổ tay nằm trong phạm vi chứng Thống tý hoặc Ma mộc (Tê dại). Cân nguyên xuất phát từ tình trạng kinh lạc vùng cổ tay (Kinh Thủ quyết âm Tâm bào và Kinh Thủ thái âm Phế) bị ách tắc lâu ngày do lao lực đơn điệu, kết hợp với phong hàn thấp tà xâm nhập làm khí huyết không thể lưu thông nuôi dưỡng đầu chi, sinh ra hiện tượng tê bại, bất toại vận động.</p>
+                    <blockquote>
+                        <p>"Thông bất thống, thống bất thông" — Kinh lạc thông suốt thì không đau mỏi; kinh lạc bế tắc thì tê bại lập tức bùng phát. Muốn khôi phục bàn tay cho bạn Lâm, bắt buộc phải giải áp cơ học ống cổ tay từ bên ngoài và hoạt huyết thông kinh toàn diện từ bên trong.</p>
+                    </blockquote>
+                    <h3>3. Phác đồ tích hợp đột phá tại RegenX Biên Hòa: Hành trình khôi phục bàn tay khỏe mạnh cho bạn Lâm</h3>
+                    <p>Nhìn vào nụ cười rạng rỡ hiện tại của bạn Lâm khi đôi bàn tay đã khôi phục hoàn toàn cảm giác cơ học, cầm nắm tự tin linh hoạt, đó là thành quả xứng đáng từ phác đồ tích hợp đột phá giữa công nghệ đỉnh cao và y học cổ truyền tại trung tâm:</p>
+                    <p><strong>- Công nghệ chuyển nhiệt sâu TECAR Therapy:</strong> Năng lượng chuyển nhiệt thông minh đi sâu làm mềm dây chằng vòng cổ tay, đánh tan dịch sưng viêm của các bao gân gấp, mở rộng khoang ống cổ tay một cách tự nhiên để giải phóng dây thần kinh giữa khỏi gọng kìm siết chặt.</p>
+                    <p><strong>- Từ Trường Siêu Dẫn (SCM) công suất cao:</strong> Bước sóng xuyên thấu tuyệt đối qua các khớp xương cổ tay, tác động mạnh mẽ vào lõi dây thần kinh giữa bị tổn thương, kích thích tái cực màng tế bào thần kinh, khôi phục tốc độ dẫn truyền tín hiệu cảm giác, giúp bàn tay bạn Lâm khôi phục cảm giác cơ học nhanh chóng ngay từ những buổi đầu.</p>
+                    <p><strong>- Đông Y thông kinh hoạt lạc chuyên sâu:</strong> Liệu pháp cổ truyền giúp hóa giải tình trạng ứ trệ, nhu nhuận gân xương, hoạt huyết nuôi dưỡng các thớ cơ chi dưới dẻo dai, thiết lập hiệu quả phục hồi bền vững lâu dài không tái phát.</p>
+                    <div class="modal-cta-box">
+                        <h4>Đừng để hội chứng ống cổ tay tước đoạt đôi bàn tay linh hoạt của bạn!</h4>
+                        <p>Hãy liên hệ ngay hôm nay để Thầy trực tiếp xem xét mức độ chèn ép thần kinh và định hướng phác đồ phù hợp.</p>
+                        <a href="#tu-van" onclick="closeModal('modal-oct')" class="btn btn-teal">Đăng ký tư vấn chấn thương cổ tay trực tiếp cùng Thầy</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- 5. RECOVERY CHO RUNNER -->
     <section id="runner" class="runner-section">
         <div class="container">
             <div class="section-header">
@@ -1188,6 +1253,7 @@
         </div>
     </section>
 
+    <!-- 6. HỆ THỐNG CHUYỂN ĐỔI CHẨN ĐOÁN -->
     <section id="tu-van" class="conversion-section">
         <div class="container">
             <div class="conversion-wrapper">
@@ -1228,6 +1294,7 @@
         </div>
     </section>
 
+    <!-- KHU VỰC ALBUM HÌNH ẢNH TRUNG TÂM THỰC TẾ -->
     <section style="padding: 60px 0; background-color: #ffffff; border-top: 1px solid #E2E8F0;">
         <div class="container">
             <div class="section-header" style="margin-bottom: 35px;">
@@ -1241,10 +1308,12 @@
         </div>
     </section>
 
+    <!-- 7. NÚT CHAT ZALO LIÊN KẾT TRỰC TIẾP HOTLINE -->
     <a href="https://zalo.me/0937010012" class="zalo-sticky" target="_blank" title="Trò chuyện qua Zalo: 0937.010.012">
         <i class="fa-solid fa-comment-dots"></i>
     </a>
 
+    <!-- 8. CHÂN TRANG FOOTER -->
     <footer>
         <div class="container footer-content">
             <div class="footer-info">
@@ -1259,6 +1328,7 @@
         </div>
     </footer>
 
+    <!-- INTERACTIVE MODAL JAVASCRIPT -->
     <script>
         function openModal(modalId) {
             document.getElementById(modalId).style.display = "flex";
