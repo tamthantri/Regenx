@@ -79,7 +79,7 @@
             gap: 8px;
         }
 
-        /* 2. KHU VỰC TIÊU ĐIỂM (HERO SECTION) - ĐẬP VÀO MẮT LÀ SỰ UY TÍN */
+        /* 2. KHU VỰC TIÊU ĐIỂM (HERO SECTION) */
         .hero-section {
             background: linear-gradient(135deg, var(--bg-dark) 50%, var(--bg-card) 100%);
             color: var(--white);
@@ -149,7 +149,7 @@
             transform: translateY(-2px);
         }
 
-        /* 3. PHÂN TÍCH NỖI ĐAU & BIẾN CHỨNG NGUY HIỂM */
+        /* 3. PHÂN TÍCH NỖI ĐAU - BỔ SUNG HÌNH ẢNH TRIỆU CHỨNG TRỰC QUAN */
         .pain-section {
             padding: 60px 0;
             background-color: var(--light-gray);
@@ -182,28 +182,48 @@
 
         .pain-card {
             background-color: var(--white);
-            padding: 25px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.02);
             border-top: 3px solid #E53E3E;
+            overflow: hidden; /* Đảm bảo góc ảnh bo tròn đều */
+            display: flex;
+            flex-direction: column;
         }
 
-        .pain-card i {
+        .pain-card-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .pain-card-content {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .pain-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .pain-card-meta i {
             color: #E53E3E;
-            font-size: 24px;
-            margin-bottom: 15px;
+            font-size: 16px;
         }
 
         .pain-card h4 {
             font-size: 16px;
             color: var(--bg-dark);
-            margin-bottom: 10px;
             font-weight: 600;
         }
 
         .pain-card p {
             font-size: 13.5px;
             color: #555;
+            line-height: 1.5;
         }
 
         /* 4. PHÁC ĐỒ CÔNG NGHỆ CAO TÍCH HỢP ĐÔNG Y TẠI REGENX */
@@ -385,6 +405,7 @@
             .section-title { font-size: 19px; }
             .case-box { padding: 25px 20px; }
             .form-wrapper { padding: 25px 20px; }
+            .pain-card-img { height: 140px; }
         }
     </style>
 </head>
@@ -410,33 +431,52 @@
                 <a href="#dang-ky" class="btn btn-action">Đặt Lịch Tầm Soát Triệu Chứng Miễn Phí</a>
             </div>
             <div class="hero-img-box">
-                <!-- Nhúng link hình ảnh Ipostimg chính xác của Thầy -->
                 <img src="https://i.postimg.cc/T33QpWG4/ong-co-tay.jpg" alt="Thầy trực tiếp phục hồi thành công hội chứng ống cổ tay cho khách hàng thực tế">
             </div>
         </div>
     </section>
 
-    <!-- 3. PHÂN TÍCH NỖI ĐAU CỦA BỆNH NHÂN -->
+    <!-- 3. PHÂN TÍCH NỖI ĐAU - ĐÃ BỔ SUNG HÌNH ẢNH TRIỆU CHỨNG SINH ĐỘNG -->
     <section class="pain-section">
         <div class="container">
             <div class="section-title">Hệ Lụy Nguy Hiểm Nếu Bỏ Lỡ Giai Đoạn Vàng</div>
             <div class="section-subtitle">Hội chứng ống cổ tay đặc thù ở nhân viên văn phòng, IT, người làm việc đầu ngón tay liên tục không thể tự khỏi nếu chỉ lạm dụng cao dán bề mặt.</div>
             
             <div class="pain-grid">
+                <!-- Cột triệu chứng 1 -->
                 <div class="pain-card">
-                    <i class="fa-solid fa-triangle-exclamation"></i>
-                    <h4>Tê bì, Ma mộc đầu chi</h4>
-                    <p>Cơn tê râm ran như kim châm ở ngón cái, ngón trỏ tiến triển âm thầm, nặng dần lên khi cầm chuột làm việc hoặc lái xe máy đường dài.</p>
+                    <img src="https://images.unsplash.com/photo-1617347454431-f49d7ff5c3b1?auto=format&fit=crop&w=400&q=80" alt="Mô tả triệu chứng tê bì châm chích đầu ngón tay" class="pain-card-img">
+                    <div class="pain-card-content">
+                        <div class="pain-card-meta">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <h4>Tê bì, Ma mộc đầu chi</h4>
+                        </div>
+                        <p>Cơn tê râm ran như kim châm ở ngón cái, ngón trỏ tiến triển âm thầm, nặng dần lên khi cầm chuột làm việc hoặc lái xe máy đường dài.</p>
+                    </div>
                 </div>
+
+                <!-- Cột triệu chứng 2 -->
                 <div class="pain-card">
-                    <i class="fa-solid fa-hand-fist"></i>
-                    <h4>Mất cảm giác cơ học</h4>
-                    <p>Dây thần kinh giữa bị siết chặt làm mất chức năng dẫn truyền, khiến tay cầm nắm yếu, không có lực, thường xuyên làm rơi rớt đồ đạc.</p>
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400&q=80" alt="Mô tả triệu chứng tay yếu rơi rớt vật dụng" class="pain-card-img">
+                    <div class="blog-card-content" style="padding: 20px; flex-grow: 1;">
+                        <div class="pain-card-meta">
+                            <i class="fa-solid fa-hand-fist"></i>
+                            <h4>Mất cảm giác cơ học</h4>
+                        </div>
+                        <p>Dây thần kinh giữa bị siết chặt làm mất chức năng dẫn truyền, khiến tay cầm nắm yếu, không có lực, thường xuyên làm rơi rớt đồ đạc.</p>
+                    </div>
                 </div>
+
+                <!-- Cột triệu chứng 3 -->
                 <div class="pain-card">
-                    <i class="fa-solid fa-wave-square" style="color: #E53E3E;"></i>
-                    <h4>Biến chứng teo cơ mô cái</h4>
-                    <p>Giai đoạn muộn khi rễ thần kinh bị bóp nghẹt hoàn toàn sẽ làm teo tóp vùng cơ mô ngón cái, hoại tử sợi vận động dẫn đến bại liệt bàn tay.</p>
+                    <img src="https://images.unsplash.com/photo-1579684389782-64d84b5e901a?auto=format&fit=crop&w=400&q=80" alt="Mô tả biến chứng teo cơ mô ngón tay cái thể nặng" class="pain-card-img">
+                    <div class="pain-card-content">
+                        <div class="pain-card-meta">
+                            <i class="fa-solid fa-wave-square"></i>
+                            <h4>Biến chứng teo cơ mô cái</h4>
+                        </div>
+                        <p>Giai đoạn muộn khi rễ thần kinh bị bóp nghẹt hoàn toàn sẽ làm teo tóp vùng cơ mô ngón cái, hoại tử sợi vận động dẫn đến bại liệt bàn tay.</p>
+                    </div>
                 </div>
             </div>
         </div>
