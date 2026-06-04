@@ -149,7 +149,7 @@
             transform: translateY(-2px);
         }
 
-        /* 3. PHÂN TÍCH NỖI ĐAU - HỆ THỐNG LINK ẢNH ĐÁM MÂY ỔN ĐỊNH MỚI */
+        /* 3. PHÂN TÍCH NỖI ĐAU - KHU VỰC HÌNH ẢNH ĐỒ HỌA SVG CHUYÊN SÂU */
         .pain-section {
             padding: 60px 0;
             background-color: var(--light-gray);
@@ -190,11 +190,16 @@
             flex-direction: column;
         }
 
-        .pain-card-img {
+        /* Khung chứa đồ họa động SVG chuẩn hóa */
+        .pain-svg-container {
             width: 100%;
             height: 175px;
-            object-fit: cover;
+            background-color: #FAFAFA;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             border-bottom: 1px solid #E2E8F0;
+            padding: 20px;
         }
 
         .pain-card-content {
@@ -396,7 +401,7 @@
 
         footer p { color: var(--text-muted); }
 
-        /* RESPONSIVE DI ĐỘNG CỰC KỲ KHÍT */
+        /* RESPONSIVE DI ĐỘNG */
         @media (max-width: 768px) {
             .hero-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
             .hero-text h1 { font-size: 23px; }
@@ -405,7 +410,7 @@
             .section-title { font-size: 19px; }
             .case-box { padding: 25px 20px; }
             .form-wrapper { padding: 25px 20px; }
-            .pain-card-img { height: 150px; }
+            .pain-svg-container { height: 140px; }
         }
     </style>
 </head>
@@ -436,16 +441,30 @@
         </div>
     </section>
 
-    <!-- 3. PHÂN TÍCH NỖI ĐAU - HỆ THỐNG LINK ẢNH CLOUD CHUẨN ĐỒNG BỘ Y KHOA KHÔNG LỖI -->
+    <!-- 3. PHÂN TÍCH NỖI ĐAU - NHÚNG CODE ĐỒ HỌA HOÀN MỸ - KHÔNG BAO GIỜ LỖI ẢNH -->
     <section class="pain-section">
         <div class="container">
             <div class="section-title">Hệ Lụy Nguy Hiểm Nếu Bỏ Lỡ Giai Đoạn Vàng</div>
             <div class="section-subtitle">Hội chứng ống cổ tay đặc thù ở nhân viên văn phòng, IT, người làm việc đầu ngón tay liên tục không thể tự khỏi nếu chỉ lạm dụng cao dán bề mặt.</div>
             
             <div class="pain-grid">
-                <!-- Ô triệu chứng 1: Tư thế làm việc văn phòng gây tê rần ngón tay -->
+                <!-- Ô triệu chứng 1: Đồ họa gõ phím tì đè cổ tay gây tê rần -->
                 <div class="pain-card">
-                    <img src="https://images.unsplash.com/photo-1541560052-5e137f229371?auto=format&fit=crop&w=400&q=80" alt="Nhân viên văn phòng gõ máy tính tì đè cổ tay sai cách gây tê ngón tay" class="pain-card-img">
+                    <div class="pain-svg-container">
+                        <svg viewBox="0 0 200 120" width="100%" height="100%">
+                            <!-- Bàn phím máy tính xám tối giản -->
+                            <rect x="30" y="75" width="140" height="35" rx="4" fill="#333333"/>
+                            <line x1="40" y1="85" x2="160" y2="85" stroke="#555" stroke-width="2" stroke-dasharray="4,2"/>
+                            <line x1="40" y1="95" x2="160" y2="95" stroke="#555" stroke-width="2" stroke-dasharray="6,3"/>
+                            <!-- Đôi bàn tay tì đè sai tư thế -->
+                            <path d="M10,25 C30,25 50,45 65,77 M190,25 C170,25 150,45 135,77" fill="none" stroke="#E2A075" stroke-width="8" stroke-linecap="round"/>
+                            <!-- Tia điện chớp đỏ rực báo hiệu đau tê rần đầu ngón -->
+                            <path d="M60,65 L55,50 L65,52 L60,35" fill="none" stroke="#E53E3E" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M140,65 L135,50 L145,52 L140,35" fill="none" stroke="#E53E3E" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="60" cy="35" r="3" fill="#E53E3E"/>
+                            <circle cx="140" cy="35" r="3" fill="#E53E3E"/>
+                        </svg>
+                    </div>
                     <div class="pain-card-content">
                         <div class="pain-card-meta">
                             <i class="fa-solid fa-triangle-exclamation"></i>
@@ -455,9 +474,22 @@
                     </div>
                 </div>
 
-                <!-- Ô triệu chứng 2: Cơ chế siết nghẹt cơ học mạch máu và xung điện thần kinh -->
+                <!-- Ô triệu chứng 2: Đồ họa mất lực rơi rớt đồ đạc -->
                 <div class="pain-card">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80" alt="Cơ chế xung điện thần kinh giữa bị siết chặt cơ học trong ống cổ tay" class="pain-card-img">
+                    <div class="pain-svg-container">
+                        <svg viewBox="0 0 200 120" width="100%" height="100%">
+                            <!-- Bàn tay buông lỏng mất cảm giác -->
+                            <path d="M60,20 C70,20 85,35 85,60 C85,75 75,90 55,95" fill="none" stroke="#E2A075" stroke-width="8" stroke-linecap="round"/>
+                            <path d="M75,40 C85,42 95,50 92,65" fill="none" stroke="#E2A075" stroke-width="6" stroke-linecap="round"/>
+                            <!-- Vật dụng (Ly nước) bị tuột rơi tự do xuống dưới -->
+                            <path d="M110,55 L135,52 L140,85 L115,88 Z" fill="none" stroke="#D4AF37" stroke-width="3"/>
+                            <!-- Đường vạch nét đứt thể hiện hướng rơi tự do -->
+                            <line x1="125" y1="95" x2="125" y2="115" stroke="#E53E3E" stroke-width="2" stroke-linecap="round" stroke-dasharray="3,3"/>
+                            <!-- Ký hiệu rung lắc cảnh báo mất kiểm soát cơ học -->
+                            <path d="M98,75 Q104,78 98,81" fill="none" stroke="#E53E3E" stroke-width="2"/>
+                            <path d="M148,70 Q154,73 148,76" fill="none" stroke="#E53E3E" stroke-width="2"/>
+                        </svg>
+                    </div>
                     <div class="pain-card-content">
                         <div class="pain-card-meta">
                             <i class="fa-solid fa-hand-fist"></i>
@@ -467,9 +499,22 @@
                     </div>
                 </div>
 
-                <!-- Ô triệu chứng 3: Cảnh báo thoái hóa cơ teo tóp ngón tay -->
+                <!-- Ô triệu chứng 3: Đồ họa mô tả vùng cơ mô cái bị xẹp lép teo tóp -->
                 <div class="pain-card">
-                    <img src="https://images.unsplash.com/photo-1504813184591-01592f259d25?auto=format&fit=crop&w=400&q=80" alt="Cảnh báo biến chứng thoái hóa teo cơ ngón tay thể nặng lâm sàng" class="pain-card-img">
+                    <div class="pain-svg-container">
+                        <svg viewBox="0 0 200 120" width="100%" height="100%">
+                            <!-- Bản phác thảo bàn tay giải phẫu -->
+                            <path d="M100,15 C120,15 140,35 140,75 C140,105 110,110 80,110 C60,110 45,95 45,75 C45,50 70,15 100,15 Z" fill="none" stroke="#444" stroke-width="2"/>
+                            <!-- Vùng lõi mô ngón cái bị siết thắt gầy gò, lõm hẳn vào -->
+                            <path d="M52,70 Q70,75 58,90" fill="none" stroke="#E53E3E" stroke-width="3" stroke-linecap="round"/>
+                            <!-- Ký hiệu gạch chéo vùng tổn thương nặng bị hoại tử sợi -->
+                            <line x1="60" y1="75" x2="68" y2="83" stroke="#E53E3E" stroke-width="2"/>
+                            <line x1="68" y1="75" x2="60" y2="83" stroke="#E53E3E" stroke-width="2"/>
+                            <!-- Mũi tên chỉ báo cảnh báo teo cơ nghiêm trọng -->
+                            <path d="M25,80 L42,80 M37,75 L42,80 L37,85" fill="none" stroke="#E53E3E" stroke-width="2"/>
+                            <text x="5" y="70" font-size="9" fill="#E53E3E" font-weight="bold">TEO CƠ</text>
+                        </svg>
+                    </div>
                     <div class="pain-card-content">
                         <div class="pain-card-meta">
                             <i class="fa-solid fa-wave-square"></i>
