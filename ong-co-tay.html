@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điều Trị Hội Chứng Ống Cổ Tay Không Phẫu Thuật - REGENX</title>
+    <!-- Nhúng bộ Icon chất lượng cao -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ==========================================================================
+           HỆ THỐNG MÀU SẮC TRỰC QUAN REGENX BRANDING (ĐEN NHÁM - VÀNG ĐỒNG)
+           ========================================================================== */
+        :root {
+            --bg-dark: #111111;      /* Đen nhám chủ đạo */
+            --bg-card: #1C1C1C;      /* Xám than tạo khối sâu */
+            --primary-gold: #D4AF37; /* Vàng đồng cao cấp */
+            --accent-cream: #F3E5AB; /* Vàng kem dịu nhẹ */
+            --white: #FFFFFF;
+            --text-dark: #222222;
+            --text-muted: #A0AEC0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* 1. THANH ĐIỀU HƯỚNG TỐI GIẢN */
+        header {
+            background-color: var(--bg-dark);
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            color: var(--white);
+            font-size: 22px;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .brand-logo span {
+            color: var(--primary-gold);
+        }
+
+        .hotline-link {
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 2. KHU VỰC TIÊU ĐIỂM (HERO SECTION) - ĐẬP VÀO MẮT LÀ SỰ UY TÍN */
+        .hero-section {
+            background: linear-gradient(135deg, var(--bg-dark) 50%, var(--bg-card) 100%);
+            color: var(--white);
+            padding: 60px 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 30px;
+            line-height: 1.35;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-text h1 span {
+            color: var(--primary-gold);
+        }
+
+        .hero-text p {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        .hero-badge {
+            background-color: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-img-box img {
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid var(--primary-gold);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+
+        .btn-action {
+            display: inline-block;
+            background-color: var(--primary-gold);
+            color: var(--bg-dark);
+            padding: 14px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(214, 175, 55, 0.3);
+        }
+
+        .btn-action:hover {
+            background-color: #B8901C;
+            transform: translateY(-2px);
+        }
+
+        /* 3. PHÂN TÍCH NỖI ĐAU & BIẾN CHỨNG NGUY HIỂM */
+        .pain-section {
+            padding: 60px 0;
+            background-color: var(--light-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            color: var(--bg-dark);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .pain-card {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border-top: 3px solid #E53E3E;
+        }
+
+        .pain-card i {
+            color: #E53E3E;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .pain-card h4 {
+            font-size: 16px;
+            color: var(--bg-dark);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .pain-card p {
+            font-size: 13.5px;
+            color: #555;
+        }
+
+        /* 4. PHÁC ĐỒ CÔNG NGHỆ CAO TÍCH HỢP ĐÔNG Y TẠI REGENX */
+        .solution-section {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .solution-card {
+            background-color: var(--white);
+            border: 1px solid #E2E8F0;
+            padding: 30px 25px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .solution-card:hover {
+            border-color: var(--primary-gold);
+            box-shadow: 0 10px 25px rgba(17,17,17,0.03);
+            transform: translateY(-3px);
+        }
+
+        .solution-card i {
+            color: var(--primary-gold);
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .solution-card h4 {
+            font-size: 17px;
+            color: var(--bg-dark);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .solution-card p {
+            font-size: 13.5px;
+            color: #555;
+        }
+
+        /* 5. CÂU CHUYỆN KHÁCH HÀNG THỰC TẾ (CASE STUDY) */
+        .case-section {
+            padding: 60px 0;
+            background-color: var(--bg-dark);
+            color: var(--white);
+        }
+
+        .case-section .section-title {
+            color: var(--white);
+        }
+
+        .case-box {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 40px;
+            margin-top: 30px;
+        }
+
+        .case-box blockquote {
+            background-color: rgba(214, 175, 55, 0.05);
+            border-left: 4px solid var(--primary-gold);
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        .case-box blockquote p {
+            color: var(--white);
+            font-size: 14.5px;
+        }
+
+        /* 6. FORM ĐĂNG KÝ CHUYỂN ĐỔI CHỐNG LÃNG PHÍ */
+        .form-section {
+            padding: 60px 0;
+            background-color: var(--light-gray);
+        }
+
+        .form-wrapper {
+            background-color: var(--white);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border: 1px solid #E2E8F0;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--bg-dark);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #CBD5E0;
+            border-radius: 4px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--primary-gold);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--bg-dark);
+            color: var(--white);
+            border: none;
+            padding: 13px;
+            font-weight: 600;
+            font-size: 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-gold);
+            color: var(--bg-dark);
+            font-weight: 700;
+        }
+
+        /* 7. TIỆN ÍCH NỔI ZALO */
+        .zalo-sticky {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #0068FF;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .zalo-sticky:hover { transform: scale(1.1); }
+
+        footer {
+            background-color: var(--bg-dark);
+            color: var(--white);
+            padding: 30px 0;
+            font-size: 13px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        footer p { color: var(--text-muted); }
+
+        /* RESPONSIVE DI ĐỘNG CỰC KỲ KHÍT */
+        @media (max-width: 768px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+            .hero-text h1 { font-size: 23px; }
+            .hero-text p { font-size: 13.5px; }
+            .btn-action { width: 100%; }
+            .section-title { font-size: 19px; }
+            .case-box { padding: 25px 20px; }
+            .form-wrapper { padding: 25px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. THANH ĐIỀU HƯỚNG TỐI GIẢN -->
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="brand-logo">REGEN<span>X</span></a>
+            <a href="https://zalo.me/0937010012" class="hotline-link" target="_blank">
+                <i class="fa-solid fa-phone-volume"></i> 0937 010 012
+            </a>
+        </div>
+    </header>
+
+    <!-- 2. KHU VỰC TIÊU ĐIỂM (HERO SECTION) -->
+    <section class="hero-section">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="hero-badge">PHÁC ĐỒ ĐIỀU TRỊ CHUYÊN SÂU KHÔNG PHẪU THUẬT</span>
+                <h1>Tê Bì Bàn Tay, <span>Mất Cảm Giác Cầm Nắm</span> – Phục Hồi Ống Cổ Tay Tận Gốc Bằng Công Nghệ SCM & TECAR</h1>
+                <p>Giải pháp trị liệu đột phá kết hợp Y học thực chứng và Đông y cổ truyền, giải ép trực tiếp dây thần kinh giữa, khôi phục đôi tay linh hoạt tự nhiên không can thiệp dao kéo.</p>
+                <a href="#dang-ky" class="btn btn-action">Đặt Lịch Tầm Soát Triệu Chứng Miễn Phí</a>
+            </div>
+            <div class="hero-img-box">
+                <!-- Nhúng link hình ảnh Ipostimg chính xác của Thầy -->
+                <img src="https://i.postimg.cc/T33QpWG4/ong-co-tay.jpg" alt="Thầy trực tiếp phục hồi thành công hội chứng ống cổ tay cho khách hàng thực tế">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PHÂN TÍCH NỖI ĐAU CỦA BỆNH NHÂN -->
+    <section class="pain-section">
+        <div class="container">
+            <div class="section-title">Hệ Lụy Nguy Hiểm Nếu Bỏ Lỡ Giai Đoạn Vàng</div>
+            <div class="section-subtitle">Hội chứng ống cổ tay đặc thù ở nhân viên văn phòng, IT, người làm việc đầu ngón tay liên tục không thể tự khỏi nếu chỉ lạm dụng cao dán bề mặt.</div>
+            
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <h4>Tê bì, Ma mộc đầu chi</h4>
+                    <p>Cơn tê râm ran như kim châm ở ngón cái, ngón trỏ tiến triển âm thầm, nặng dần lên khi cầm chuột làm việc hoặc lái xe máy đường dài.</p>
+                </div>
+                <div class="pain-card">
+                    <i class="fa-solid fa-hand-fist"></i>
+                    <h4>Mất cảm giác cơ học</h4>
+                    <p>Dây thần kinh giữa bị siết chặt làm mất chức năng dẫn truyền, khiến tay cầm nắm yếu, không có lực, thường xuyên làm rơi rớt đồ đạc.</p>
+                </div>
+                <div class="pain-card">
+                    <i class="fa-solid fa-wave-square" style="color: #E53E3E;"></i>
+                    <h4>Biến chứng teo cơ mô cái</h4>
+                    <p>Giai đoạn muộn khi rễ thần kinh bị bóp nghẹt hoàn toàn sẽ làm teo tóp vùng cơ mô ngón cái, hoại tử sợi vận động dẫn đến bại liệt bàn tay.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PHÁC ĐỒ ĐIỀU TRỊ CHUYÊN SÂU TẠI REGENX -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="section-title">Phác Đồ Cơ Sinh Học Tích Hợp Độc Quyền</div>
+            <div class="section-subtitle">Không lạm dụng thuốc giảm đau gây hại dạ dày - Không phẫu thuật rạch mổ để lại sẹo xơ cứng bao gân.</div>
+            
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <i class="fa-solid fa-bolt-lightning"></i>
+                    <h4>Chuyển nhiệt sâu TECAR</h4>
+                    <p>Đi sâu làm mềm dây chằng vòng cổ tay đang xơ cứng, đánh tan dịch sưng viêm bao gân, mở rộng khoang cơ học để giải phóng dây thần kinh giữa.</p>
+                </div>
+                <div class="solution-card">
+                    <i class="fa-solid fa-wave-square"></i>
+                    <h4>Từ Trường Siêu Dẫn SCM</h4>
+                    <p>Khả năng xuyên thấu tuyệt đối qua khớp xương, tác động trực tiếp lên tế bào rễ thần kinh tổn thương, phục hồi tốc độ xung điện và khôi phục cảm giác đầu chi thần tốc.</p>
+                </div>
+                <div class="solution-card">
+                    <i class="fa-solid fa-seedling"></i>
+                    <h4>Đông Y thông kinh hoạt lạc</h4>
+                    <p>Ứng dụng bài thuốc cổ truyền bồi bổ Can Thận, hoạt huyết hóa ứ giúp nhu nhuận gân cốt từ căn nguyên, duy trì sự dẻo dai toàn chi lâu dài.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. MINH CHỨNG LÂM SÀNG THỰC TẾ (CASE STUDY BẠN LÂM) -->
+    <section class="case-section">
+        <div class="container">
+            <div class="section-title">Minh Chứng Lâm Sàng Từ Khách Hàng Thực Tế</div>
+            
+            <div class="case-box">
+                <h3 style="color: var(--primary-gold); font-size: 18px; margin-bottom: 15px; font-weight: 600;">Hành trình hồi sinh đôi bàn tay văn phòng của bạn Lâm</h3>
+                <p style="color: #DDD; font-size: 14.5px; text-align: justify;">Khi đến với trung tâm, bạn Lâm đang ở trong tình trạng vô cùng lo lắng: bàn tay phải gần như mất sạch cảm giác cầm nắm cơ học do tính chất công việc văn phòng phải tì đè cổ tay liên tục. Việc ăn uống, làm việc hay sinh hoạt cá nhân đều vô cùng khó khăn, rễ thần kinh bị chèn ép thể nặng đứng trước nguy cơ phải can thiệp mổ.</p>
+                <blockquote>
+                    <p>"Áp dụng nguyên lý Đông y 'Thông bất thống' kết hợp bộ đôi công nghệ giải áp mô sâu TECAR và SCM, chúng tôi đã giúp mở rộng khoang cổ tay mechanical, khôi phục luồng dẫn truyền thần kinh tự nhiên. Hiện tại, gân cơ đã nhu nhuận, Lâm đã hoàn toàn lấy lại cảm giác tốt, cầm nắm linh hoạt mượt mà và nụ cười rạng rỡ đã trở lại!"</p>
+                </blockquote>
+                <p style="font-size: 13px; color: var(--primary-gold); font-weight: 600; text-align: right; margin-top: 10px;">— Lời kể lâm sàng từ Thầy</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FORM ĐĂNG KÝ CHẨN ĐOÁN MIỄN PHÍ -->
+    <section id="dang-ky" class="form-section">
+        <div class="container">
+            <div class="section-title">Đăng Ký Đặt Lịch Hẹn Tư Vấn</div>
+            <div class="section-subtitle">Hãy bảo vệ đôi bàn tay lao động của bạn trước khi biến chứng teo cơ xảy ra. Điền thông tin để Thầy trực tiếp xem xét mức độ chèn ép thần kinh từ xa.</div>
+            
+            <div class="form-wrapper">
+                <form action="https://formspree.io/f/xnjrwrrl" method="POST">
+                    <div class="form-group">
+                        <label for="name">Họ và tên của bạn</label>
+                        <input type="text" id="name" name="Họ và Tên" placeholder="Ví dụ: Nguyễn Văn A" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại (Có Zalo liên hệ)</label>
+                        <input type="tel" id="phone" name="Số điện thoại" placeholder="Ví dụ: 0912345678" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="job">Nghề nghiệp / Công việc hiện tại</label>
+                        <input type="text" id="job" name="Nghề nghiệp" placeholder="Ví dụ: Nhân viên văn phòng, IT, Tài xế...">
+                    </div>
+                    <div class="form-group">
+                        <label for="note">Mô tả triệu chứng tê mỏi hoặc Ghi chú tiền sử điều trị</label>
+                        <textarea id="note" name="Ghi chú triệu chứng" rows="4" placeholder="Ví dụ: Tê 3 ngón tay khi lái xe máy, cầm chuột đau buốt..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Gửi thông tin đăng ký lịch thăm khám</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. TIỆN ÍCH NỔI ZALO ĐƯỜNG DÂY NÓNG -->
+    <a href="https://zalo.me/0937010012" class="zalo-sticky" target="_blank" title="Kết nối Zalo tư vấn trực tiếp cùng Thầy">
+        <i class="fa-solid fa-comment-dots"></i>
+    </a>
+
+    <!-- 8. CHÂN TRANG FOOTER -->
+    <footer>
+        <div class="container">
+            <p style="margin-bottom: 5px; font-weight: 600; color: var(--white);">REGENX CENTER — HỆ SINH THÁI PHỤC HỒI CHUYÊN SÂU</p>
+            <p style="margin-bottom: 15px;">Địa chỉ: 248 quốc lộ 51 khu phố 2, Long Hưng, Thành Phố Biên Hòa, Đồng Nai</p>
+            <p>© 2026 REGENX. Bảo lưu mọi quyền chuyên môn y khoa.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
