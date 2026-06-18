@@ -1257,3 +1257,57 @@
                         <label for="phone">Số điện thoại (Có Zalo)</label>
                         <input type="tel" id="phone" name="Số điện thoại" placeholder="Ví dụ: 0912345678" required>
                     </div>
+                    <div class="form-group">
+                        <label for="type">Vấn đề cần phục hồi trọng tâm</label>
+                        <select id="type" name="Vấn đề trọng tâm">
+                            <option value="Cột sống / Đau đĩa đệm / Thần kinh tọa">Cột sống / Đau đĩa đệm / Thần kinh tọa</option>
+                            <option value="Phục hồi chấn thương thể thao / Runner">Phục hồi chấn thương thể thao / Runner</option>
+                            <option value="Viêm khớp / Thoái hóa các khớp cơ học">Viêm khớp / Thoái hóa các khớp cơ học</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="file">Gửi kèm đường link phim chụp MRI / X-Ray hoặc Ghi chú tình trạng</label>
+                        <input type="text" id="file" name="Link phim chụp hoặc Ghi chú" placeholder="Dán link ảnh phim chụp hoặc gõ ghi chú triệu chứng tại đây">
+                    </div>
+                    <button type="submit" class="btn-submit">Gửi thông tin đăng ký tư vấn</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://zalo.me/0937010012" class="zalo-sticky" target="_blank" title="Trò chuyện qua Zalo: 0937.010.012">
+        <i class="fa-solid fa-comment-dots"></i>
+    </a>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <div class="footer-brand">REGEN<span>X</span></div>
+                <p>Tầm nhìn: Hệ sinh thái phục hồi chuyên sâu bền vững.</p>
+                <p>© 2026 REGENX Center.</p>
+            </div>
+            <div class="footer-contact" style="text-align: right;">
+                <p><strong>Địa chỉ:</strong> 248 quốc lộ 51 khu phố 2, Long Hưng, Thành Phố Biên Hòa, Đồng Nai</p>
+                <p><strong>Hotline / Zalo:</strong> 0937 010 012</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "flex";
+            document.body.style.overflow = "hidden"; 
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+            document.body.style.overflow = "auto"; 
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        }
+    </script>
+</body>
+</html>
