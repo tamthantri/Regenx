@@ -209,7 +209,7 @@
         }
 
         /* ==========================================================================
-           3. KHỐI CÔNG NGHỆ CHỦ LỰC - NHÚNG CHÍNH XÁC LINK DIRECT SẠCH CỦA THẦY
+           3. NHÓM CÔNG NGHỆ CHỦ LỰC - SỬ DỤNG 100% LINK DIRECT THỦ CÔNG CỦA THẦY
            ========================================================================== */
         .tech-section {
             padding: 70px 0;
@@ -241,7 +241,7 @@
 
         .tech-card-img {
             width: 100%;
-            height: 440px; /* Chiều cao tối ưu giữ nguyên dáng máy bệ vệ đứng của Thầy */
+            height: 440px; /* Chiều cao bệ vệ tôn dáng đứng của máy */
             object-fit: cover;
             border-bottom: 1px solid #E2E8F0;
         }
@@ -273,7 +273,7 @@
         }
 
         /* ==========================================================================
-           4. NHÓM BỆNH LÝ TRỌNG TÂM (CỘT SỐNG & KHỚP)
+           4. NHÓM BỆNH LÝ TRỌNG TÂM - PHỤC HỒI NGUYÊN VẸN 2 KHỐI ẢNH LÂM SÀNG BAN ĐẦU
            ========================================================================== */
         .pathology-section {
             padding: 70px 0;
@@ -289,11 +289,12 @@
         .pathology-category {
             background: var(--white);
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            border: 1px solid #E2E8F0;
         }
 
         .pathology-category h3 {
@@ -305,6 +306,7 @@
             gap: 10px;
             border-bottom: 2px solid var(--light-gray);
             padding-bottom: 10px;
+            font-weight: 700;
         }
 
         .pathology-category h3 i {
@@ -316,7 +318,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .pathology-list li {
@@ -335,15 +337,16 @@
 
         .pathology-img {
             width: 100%;
-            height: 180px;
+            height: 240px; /* Chiều cao hiển thị ảnh lâm sàng cân đối */
             object-fit: cover;
-            border-radius: 6px;
+            border-radius: 8px;
             margin-top: auto;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid #E2E8F0;
         }
 
         /* ==========================================================================
-           4.5. BẢNG GIÁ DỊCH VỤ TRỊ LIỆU TINH TẾ CỦA REGENX
+           4.5. KHU VỰC BẢNG GIÁ ĐỒNG BỘ THƯƠNG HIỆU
            ========================================================================== */
         .pricing-section {
             padding: 70px 0;
@@ -912,6 +915,7 @@
             .tech-grid, .pathology-box, .pricing-grid, .blog-grid { grid-template-columns: 1fr; gap: 20px; }
             .tech-card-img { height: 440px; }
             .pathology-list { grid-template-columns: 1fr; }
+            .pathology-img { height: 220px; margin-top: 15px; }
             .modal-box { height: 95vh; }
             .modal-body { padding: 25px 20px; }
             .modal-body h2 { font-size: 19px; }
@@ -1007,7 +1011,9 @@
                             <li><i class="fa-solid fa-circle-check"></i> Hội chứng cổ vai gáy</li>
                         </ul>
                     </div>
+                    <img src="https://i.postimg.cc/J0SNPmnM/Tri-lieu-vai-gay.jpg" alt="Trị liệu cột sống cổ vai gáy thực tế bằng công nghệ cao" class="pathology-img">
                 </div>
+                
                 <div class="pathology-category">
                     <div>
                         <h3><i class="fa-solid fa-accessibility"></i> Trị Liệu Các Khớp</h3>
@@ -1018,6 +1024,7 @@
                             <li><i class="fa-solid fa-circle-check"></i> Viêm cân gan chân</li>
                         </ul>
                     </div>
+                    <img src="https://i.postimg.cc/g2WSWqY1/Lat-so-mi.jpg" alt="Trị liệu phục hồi vận động cơ học các khớp xương" class="pathology-img">
                 </div>
             </div>
         </div>
@@ -1075,6 +1082,7 @@
             </div>
             <div class="blog-grid">
                 <div class="blog-card" onclick="openModal('modal-cvg')">
+                    <img src="https://i.postimg.cc/J0SNPmnM/Tri-lieu-vai-gay.jpg" alt="" class="blog-card-img">
                     <div class="blog-card-content">
                         <span class="blog-card-tag">Bệnh lý cột sống cổ</span>
                         <h3>Hội Chứng Cổ Vai Gáy: Căn Nguyên Xơ Hóa Cơ Học Và Giải Pháp Phục Hồi Tận Gốc</h3>
@@ -1083,6 +1091,7 @@
                     </div>
                 </div>
                 <div class="blog-card" onclick="openModal('modal-runner-art')">
+                    <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=400&q=80" alt="" class="blog-card-img">
                     <div class="blog-card-content">
                         <span class="blog-card-tag">Chấn thương thể thao</span>
                         <h3>Tối Ưu Tốc Độ Phục Hồi Sau Race: Xử Lý IT Band, Achilles Và Shin Splints</h3>
@@ -1091,6 +1100,7 @@
                     </div>
                 </div>
                 <div class="blog-card" onclick="openModal('modal-tvdd')">
+                    <img src="https://i.postimg.cc/8c7dRsTm/tri-lieu.jpg" alt="" class="blog-card-img">
                     <div class="blog-card-content">
                         <span class="blog-card-tag">Cột sống thắt lưng</span>
                         <h3>Thoát Vị Đĩa Đệm Thắt Lưng: Đừng Chỉ Giảm Đau Bề Mặt! Hãy Giải Áp Tận Gốc</h3>
@@ -1099,6 +1109,7 @@
                     </div>
                 </div>
                 <div class="blog-card" onclick="openModal('modal-oct')">
+                    <img src="https://i.postimg.cc/T33QpWG4/ong-co-tay.jpg" alt="Trị liệu hội chứng ống cổ tay thực tế cho bạn Lâm" class="blog-card-img">
                     <div class="blog-card-content">
                         <span class="blog-card-tag">Bệnh lý văn phòng</span>
                         <h3>Hội Chứng Ống Cổ Tay: Biến Chứng Tê Bại Mất Cảm Giác Và Phác Đồ Phục Hồi Không Phẫu Thuật</h3>
@@ -1114,6 +1125,7 @@
         <div class="modal-box">
             <div class="modal-close-btn" onclick="closeModal('modal-cvg')"><i class="fa-solid fa-xmark"></i></div>
             <div class="modal-scroll-content">
+                <img src="https://i.postimg.cc/J0SNPmnM/Tri-lieu-vai-gay.jpg" alt="" class="modal-header-img">
                 <div class="modal-body">
                     <h2>Hội Chứng Cổ Vai Gáy: Căn Nguyên Xơ Hóa Cơ Học Và Phác Đồ Phục Hồi Tận Gốc Bằng Công Nghệ SCM & TECAR Tại Biên Hòa</h2>
                     <h3>1. Cơn ác mộng mang tên "Đau mỏi cổ vai gáy"</h3>
@@ -1131,6 +1143,7 @@
         <div class="modal-box">
             <div class="modal-close-btn" onclick="closeModal('modal-runner-art')"><i class="fa-solid fa-xmark"></i></div>
             <div class="modal-scroll-content">
+                <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=850&q=80" alt="" class="modal-header-img">
                 <div class="modal-body">
                     <h2>Tối Ưu Tốc Độ Phục Hồi Sau Race: Giải Pháp Xử Lý Chấn Thương IT Band, Achilles Và Shin Splints Bằng Công Nghệ SCM & Shockwave</h2>
                     <h3>1. Nỗi đau phía sau vạch đích</h3>
@@ -1148,6 +1161,7 @@
         <div class="modal-box">
             <div class="modal-close-btn" onclick="closeModal('modal-tvdd')"><i class="fa-solid fa-xmark"></i></div>
             <div class="modal-scroll-content">
+                <img src="https://i.postimg.cc/8c7dRsTm/tri-lieu.jpg" alt="" class="modal-header-img">
                 <div class="modal-body">
                     <h2>Thoát Vị Đĩa Đệm Cột Sống Thắt Lưng: Đừng Chỉ Giảm Đau Bề Mặt! Hãy Giải Áp Tận Gốc Bằng Công Nghệ SCM & Đông Y</h2>
                     <h3>1. Nỗi đau thấu xương và sai lầm từ các giải pháp điều trị "Bề Mặt"</h3>
@@ -1165,11 +1179,11 @@
         <div class="modal-box">
             <div class="modal-close-btn" onclick="closeModal('modal-oct')"><i class="fa-solid fa-xmark"></i></div>
             <div class="modal-scroll-content">
-                <img src="https://i.postimg.cc/T33QpWG4/ong-co-tay.jpg" alt="" class="modal-header-img">
+                <img src="https://i.postimg.cc/T33QpWG4/ong-co-tay.jpg" alt="Trị liệu hội chứng ống cổ tay thực tế cho bạn Lâm tại trung tâm" class="modal-header-img">
                 <div class="modal-body">
                     <h2>Hội Chứng Ống Cổ Tay Ở Dân Văn Phòng: Biến Chứng Tê Bại Mất Cảm Giác Và Phác Đồ Phục Hồi Thần Tốc Không Phẫu Thuật</h2>
                     <h3>1. Tê bì, mất cảm giác cầm nắm</h3>
-                    <p>Cơn đau nhức lan rộng khiến bàn tay gần như mất hoàn toàn cảm giác cơ học, cầm nắm vật dụng không còn tự chủ. Điển hình như trường hợp bạn Lâm...</p>
+                    <p>Cơn đau nhức lan rộng khiến bàn tay gần như mất hoàn toàn cảm giác cơ học, cầm nắm vật dụng không còn tự chủ. Điển hình như trường hợp của bạn Lâm...</p>
                     <div class="modal-cta-box">
                         <h4>Đừng để hội chứng ống cổ tay tước đoạt đôi bàn tay linh hoạt của bạn!</h4>
                         <a href="#tu-van" onclick="closeModal('modal-oct')" class="btn btn-teal">Đăng ký tư vấn trực tiếp cùng Thầy</a>
