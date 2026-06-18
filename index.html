@@ -209,7 +209,7 @@
         }
 
         /* ==========================================================================
-           3. NHÓM CÔNG NGHỆ CHỦ LỰC - SỬ DỤNG 100% LINK DIRECT THỦ CÔNG CỦA THẦY
+           3. NHÓM CÔNG NGHỆ CHỦ LỰC - CẤU TRÚC VIDEO KHÍT SÁT THEO Ý THẦY
            ========================================================================== */
         .tech-section {
             padding: 70px 0;
@@ -241,9 +241,26 @@
 
         .tech-card-img {
             width: 100%;
-            height: 440px; /* Chiều cao bệ vệ tôn dáng đứng của máy */
+            height: 440px;
             object-fit: cover;
             border-bottom: 1px solid #E2E8F0;
+        }
+
+        /* Đã tinh chỉnh hộp chứa video giống hệt cấu trúc tối giản sạch sẽ của trang ống cổ tay */
+        .tech-card-video-wrapper {
+            width: 100%;
+            background-color: var(--navy-dark);
+            border-bottom: 1px solid #E2E8F0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tech-card-video-wrapper video {
+            width: 100%;
+            height: auto; /* Tự động co giãn khít sát theo tỉ lệ camera của Thầy */
+            display: block;
         }
 
         .tech-card-content {
@@ -273,7 +290,7 @@
         }
 
         /* ==========================================================================
-           4. NHÓM BỆNH LÝ TRỌNG TÂM - PHỤC HỒI NGUYÊN VẸN 2 KHỐI ẢNH LÂM SÀNG BAN ĐẦU
+           4. NHÓM BỆNH LÝ TRỌNG TÂM (CỘT SỐNG & KHỚP)
            ========================================================================== */
         .pathology-section {
             padding: 70px 0;
@@ -337,7 +354,7 @@
 
         .pathology-img {
             width: 100%;
-            height: 240px; /* Chiều cao hiển thị ảnh lâm sàng cân đối */
+            height: 240px;
             object-fit: cover;
             border-radius: 8px;
             margin-top: auto;
@@ -914,6 +931,7 @@
             .section-header h2 { font-size: 22px; }
             .tech-grid, .pathology-box, .pricing-grid, .blog-grid { grid-template-columns: 1fr; gap: 20px; }
             .tech-card-img { height: 440px; }
+            .tech-card-video-wrapper { height: auto; } /* Tự động co giãn mượt mà trên mobile */
             .pathology-list { grid-template-columns: 1fr; }
             .pathology-img { height: 220px; margin-top: 15px; }
             .modal-box { height: 95vh; }
@@ -976,10 +994,14 @@
                 </div>
 
                 <div class="tech-card">
-                    <img src="https://i.postimg.cc/QMXk6bLQ/Tu-truong-sieu-dan.jpg" alt="Hệ thống máy Từ trường siêu dẫn công suất cao bệ vệ đặt tại sảnh phòng khám" class="tech-card-img">
+                    <div class="tech-card-video-wrapper">
+                        <video autoplay muted loop playsinline controlsList="nodownload">
+                            <source src="Trị liệu ống cổ tay.mp4" type="video/mp4">
+                        </video>
+                    </div>
                     <div class="tech-card-content">
                         <h3><i class="fa-solid fa-wave-square"></i> 2. Từ Trường Siêu Dẫn (SCM)</h3>
-                        <p>Xuyên sâu qua các lớp cơ và tổ chức khớp xương cơ học, kích thích trực tiếp cấp độ tế bào thần kinh, tăng tốc phục hồi mô tổn thương sâu cực kỳ hiệu quả.</p>
+                        <p>Xuyên sâu qua các lớp cơ và tổ chức khớp xương cơ học, kích thích trực tiếp cấp độ tế bào thần kinh, tăng tốc phục hồi mô tổn thương sâu cực kỳ hiệu quả. <em>(Tư liệu Thầy đang vận hành máy phục hồi thực tế cho người bệnh)</em>.</p>
                     </div>
                 </div>
 
@@ -1129,7 +1151,7 @@
                 <div class="modal-body">
                     <h2>Hội Chứng Cổ Vai Gáy: Căn Nguyên Xơ Hóa Cơ Học Và Phác Đồ Phục Hồi Tận Gốc Bằng Công Nghệ SCM & TECAR Tại Biên Hòa</h2>
                     <h3>1. Cơn ác mộng mang tên "Đau mỏi cổ vai gáy"</h3>
-                    <p>Mỗi ngày, có hàng nghìn người thức dậy với chiếc cổ cứng đờ, bả vai đau nhức âm ỉ như có hàng tấn đá đè lên, kèm theo những cơn tê bì lan dọc xuống cánh tay...</p>
+                    <p>Mỗi ngày, có hàng nghìn người thức dậy với chiếc cổ cứng đờ, bả vai đau nhức âm ỉ như có hàng tấn đá đè lên, kèm theo những cơn tê bì lan dọc xuống chân...</p>
                     <div class="modal-cta-box">
                         <h4>Chủ động bảo vệ cột sống cổ trước khi quá muộn!</h4>
                         <a href="#tu-van" onclick="closeModal('modal-cvg')" class="btn btn-teal">Gửi thông tin / Kết nối Zalo tư vấn</a>
@@ -1150,7 +1172,7 @@
                     <p>Hội chứng dải chậu hông (IT Band), viêm gân gót chân (Achilles), và hội chứng đau cẳng chân (Shin Splints) chính là "bộ ba sát thủ" bào mòn phong độ của biết bao runner...</p>
                     <div class="modal-cta-box">
                         <h4>Đừng để chấn thương cướp đi PR tiếp theo của bạn!</h4>
-                        <a href="#tu-van" onclick="closeModal('modal-runner-art')" class="btn btn-teal">Đăng ký phục hồi chuyên sâu cho Runner</a>
+                        <a href="#tu-van" onclick="closeModal('runner-art')" class="btn btn-teal">Đăng ký phục hồi chuyên sâu cho Runner</a>
                     </div>
                 </div>
             </div>
@@ -1183,7 +1205,7 @@
                 <div class="modal-body">
                     <h2>Hội Chứng Ống Cổ Tay Ở Dân Văn Phòng: Biến Chứng Tê Bại Mất Cảm Giác Và Phác Đồ Phục Hồi Thần Tốc Không Phẫu Thuật</h2>
                     <h3>1. Tê bì, mất cảm giác cầm nắm</h3>
-                    <p>Cơn đau nhức lan rộng khiến bàn tay gần như mất hoàn toàn cảm giác cơ học, cầm nắm vật dụng không còn tự chủ. Điển hình như trường hợp của bạn Lâm...</p>
+                    <p>Cơn đau nhức lan rộng khiến bàn tay gần như mất hoàn toàn cảm giác cơ học, cầm nắm vật dụng không còn tự chủ. Điển hình như trường hợp bạn Lâm...</p>
                     <div class="modal-cta-box">
                         <h4>Đừng để hội chứng ống cổ tay tước đoạt đôi bàn tay linh hoạt của bạn!</h4>
                         <a href="#tu-van" onclick="closeModal('modal-oct')" class="btn btn-teal">Đăng ký tư vấn trực tiếp cùng Thầy</a>
@@ -1235,57 +1257,3 @@
                         <label for="phone">Số điện thoại (Có Zalo)</label>
                         <input type="tel" id="phone" name="Số điện thoại" placeholder="Ví dụ: 0912345678" required>
                     </div>
-                    <div class="form-group">
-                        <label for="type">Vấn đề cần phục hồi trọng tâm</label>
-                        <select id="type" name="Vấn đề trọng tâm">
-                            <option value="Cột sống / Đau đĩa đệm / Thần kinh tọa">Cột sống / Đau đĩa đệm / Thần kinh tọa</option>
-                            <option value="Phục hồi chấn thương thể thao / Runner">Phục hồi chấn thương thể thao / Runner</option>
-                            <option value="Viêm khớp / Thoái hóa các khớp cơ học">Viêm khớp / Thoái hóa các khớp cơ học</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="file">Gửi kèm đường link phim chụp MRI / X-Ray hoặc Ghi chú tình trạng</label>
-                        <input type="text" id="file" name="Link phim chụp hoặc Ghi chú" placeholder="Dán link ảnh phim chụp hoặc gõ ghi chú triệu chứng tại đây">
-                    </div>
-                    <button type="submit" class="btn-submit">Gửi thông tin đăng ký tư vấn</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <a href="https://zalo.me/0937010012" class="zalo-sticky" target="_blank" title="Trò chuyện qua Zalo: 0937.010.012">
-        <i class="fa-solid fa-comment-dots"></i>
-    </a>
-
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-info">
-                <div class="footer-brand">REGEN<span>X</span></div>
-                <p>Tầm nhìn: Hệ sinh thái phục hồi chuyên sâu bền vững.</p>
-                <p>© 2026 REGENX Center.</p>
-            </div>
-            <div class="footer-contact" style="text-align: right;">
-                <p><strong>Địa chỉ:</strong> 248 quốc lộ 51 khu phố 2, Long Hưng, Thành Phố Biên Hòa, Đồng Nai</p>
-                <p><strong>Hotline / Zalo:</strong> 0937 010 012</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = "flex";
-            document.body.style.overflow = "hidden"; 
-        }
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
-            document.body.style.overflow = "auto"; 
-        }
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal-overlay')) {
-                event.target.style.display = "none";
-                document.body.style.overflow = "auto";
-            }
-        }
-    </script>
-</body>
-</html>
