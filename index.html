@@ -209,7 +209,7 @@
         }
 
         /* ==========================================================================
-           3. NHÓM CÔNG NGHỆ CHỦ LỰC - BỘ BA MÀN HÌNH VIDEO KHÍT SÁT TỐI GIẢN
+           3. NHÓM CÔNG NGHỆ CHỦ LỰC - KHÔI PHỤC CẤU TRÚC ĐỀU ĐẸP, FIX NỀN TRẮNG
            ========================================================================== */
         .tech-section {
             padding: 70px 0;
@@ -239,10 +239,11 @@
             border-color: var(--teal);
         }
 
-        /* Hộp chứa video co giãn khít sát tối giản hoàn toàn theo site ống cổ tay */
+        /* Cố định 440px giữ cấu trúc chuẩn, nền trắng sạch sẽ hòa quyện website */
         .tech-card-video-wrapper {
             width: 100%;
-            background-color: var(--navy-dark);
+            height: 440px;
+            background-color: var(--white);
             border-bottom: 1px solid #E2E8F0;
             overflow: hidden;
             display: flex;
@@ -252,7 +253,8 @@
 
         .tech-card-video-wrapper video {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: contain; 
             display: block;
         }
 
@@ -705,7 +707,7 @@
            ========================================================================== */
         .runner-section {
             padding: 80px 0;
-            background: linear-gradient(rgba(17, 17, 17, 0.92), rgba(17, 17, 17, 0.92)), 
+            background: linear-gradient(rgba(17, 17, 17, 0.94), rgba(17, 17, 17, 0.94)), 
                         url('https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
@@ -756,12 +758,25 @@
             font-size: 16px;
         }
 
-        .runner-visual img {
+        /* Khung trình phát video bảo dưỡng cho Runner mượt mà bệ vệ */
+        .runner-visual-video-wrapper {
             width: 100%;
-            max-height: 350px;
-            object-fit: cover;
+            height: 350px;
+            background-color: var(--white);
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .runner-visual-video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
         }
 
         /* ==========================================================================
@@ -923,7 +938,8 @@
             .btn { width: 100%; }
             .section-header h2 { font-size: 22px; }
             .tech-grid, .pathology-box, .pricing-grid, .blog-grid { grid-template-columns: 1fr; gap: 20px; }
-            .tech-card-video-wrapper { height: auto; } /* Tự động co giãn mượt mà trên mobile */
+            .tech-card-video-wrapper { height: 440px; } 
+            .runner-visual-video-wrapper { height: 240px; }
             .pathology-list { grid-template-columns: 1fr; }
             .pathology-img { height: 220px; margin-top: 15px; }
             .modal-box { height: 95vh; }
@@ -979,32 +995,33 @@
             <div class="tech-grid">
                 <div class="tech-card">
                     <div class="tech-card-video-wrapper">
-                        <video autoplay muted loop playsinline controlsList="nodownload">
-                            <source src="Dieu tri gan Asin.mp4" type="video/mp4">
+                        <video autoplay muted loop playsinline preload="metadata" controlsList="nodownload">
+                            <source src="https://raw.githubusercontent.com/tamthantri/Regenx/main/Dieu%20tri%20gan%20Asin.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div class="tech-card-content">
                         <h3><i class="fa-solid fa-bolt-lightning"></i> 1. Liệu Pháp Sóng Xung Kích</h3>
-                        <p>Đóng vai trò mũi nhọn cơ học chính xác, đánh tan các điểm xoắn cơ mãn tính, phá vỡ tổ chức vôi hóa xù xì và kích thích tăng sinh mạch máu cục bộ gân cốt. <em>(Tư liệu chuyên sâu Thầy đang vận hành trực tiếp điều trị tổn thương gân Achilles thực tế cho bệnh nhân)</em>.</p>
+                        <p>Đóng vai trò mũi nhọn cơ học chính xác, đánh tan các điểm xoắn cơ mãn tính, phá vỡ tổ chức vôi hóa xù xì và kích thích tăng sinh mạch máu cục bộ gân cốt. <em>(Tư liệu chuyên sâu đang vận hành trực tiếp điều trị tổn thương gân Achilles thực tế cho bệnh nhân)</em>.</p>
                     </div>
                 </div>
 
                 <div class="tech-card">
                     <div class="tech-card-video-wrapper">
-                        <video autoplay muted loop playsinline controlsList="nodownload">
-                            <source src="Tri lieu ong co tay.mp4" type="video/mp4">
+                        <video autoplay muted loop playsinline preload="metadata" controlsList="nodownload">
+                            <source src="https://raw.githubusercontent.com/tamthantri/Regenx/main/Tr%E1%BB%8B%20li%E1%BB%87u%20%E1%BB%91ng%20c%E1%BB%95%20tay.mp4" type="video/mp4">
+                            <source src="https://raw.githubusercontent.com/tamthantri/Regenx/main/tri-lieu-ong-co-tay.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div class="tech-card-content">
                         <h3><i class="fa-solid fa-wave-square"></i> 2. Từ Trường Siêu Dẫn (SCM)</h3>
-                        <p>Xuyên sâu qua các lớp cơ và tổ chức khớp xương cơ học, kích thích trực tiếp cấp độ tế bào thần kinh, tăng tốc phục hồi mô tổn thương sâu cực kỳ hiệu quả. <em>(Tư liệu thực chứng Thầy đang vận hành phục hồi Hội chứng Ống cổ tay chuyên sâu cho bạn Lâm)</em>.</p>
+                        <p>Xuyên sâu qua các lớp cơ và tổ chức khớp xương cơ học, kích thích trực tiếp cấp độ tế bào thần kinh, tăng tốc phục hồi mô tổn thương sâu cực kỳ hiệu quả. <em>(Tư liệu thực chứng vận hành phục hồi Hội chứng Ống cổ tay chuyên sâu cho bạn Lâm)</em>.</p>
                     </div>
                 </div>
 
                 <div class="tech-card">
                     <div class="tech-card-video-wrapper">
-                        <video autoplay muted loop playsinline controlsList="nodownload">
-                            <source src="Dieu tri 2 ca song hanh.mp4" type="video/mp4">
+                        <video autoplay muted loop playsinline preload="metadata" controlsList="nodownload">
+                            <source src="https://raw.githubusercontent.com/tamthantri/Regenx/main/Dieu%20tri%202%20ca%20song%20hanh%20.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div class="tech-card-content">
@@ -1079,7 +1096,7 @@
                         <li><i class="fa-solid fa-check"></i> Trị liệu SCM cấp tốc phục hồi Achilles, IT Band, Shin Splint</li>
                         <li><i class="fa-solid fa-check"></i> Kỹ thuật giải áp mô mềm cơ học sau race Marathon/Ultra Trail</li>
                     </ul>
-                    <a href="#tu-van" class="pricing-btn">Đăng ký phục hồi</a>
+                    <a href="#tu-van" class="pricing-btn">Đặt lịch phục hồi</a>
                 </div>
                 <div class="pricing-card">
                     <h3>Trị Liệu Các Khớp</h3>
@@ -1229,7 +1246,11 @@
                     </ul>
                 </div>
                 <div class="runner-visual">
-                    <img src="https://i.postimg.cc/g2WSWqY1/Lat-so-mi.jpg" alt="Phục hồi chấn thương cổ chân, lật sơ mi cho Runner thực tế">
+                    <div class="runner-visual-video-wrapper">
+                        <video autoplay muted loop playsinline preload="metadata" controlsList="nodownload">
+                            <source src="https://raw.githubusercontent.com/tamthantri/Regenx/main/Bao%20duong%20Runner.mp4.mp4" type="video/mp4">
+                        </video>
+                    </div>
                 </div>
             </div>
         </div>
